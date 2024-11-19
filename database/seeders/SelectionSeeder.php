@@ -72,7 +72,7 @@ class SelectionSeeder extends Seeder
                     'base_down' => $item['Base hold downt'],
                     'volume' => $item['Ёмкость'],
                     'box_size' => $item['РазмерКорпуса'],
-                    'amperage' => intval($item['Cca']),
+                    'amperage' => intval($item['Cca']) / 1.06,
                     'height' => floatval($item['Высота']),
                     'width' => floatval($item['Длина']),
                     'length' => floatval($item['Ширина']),
