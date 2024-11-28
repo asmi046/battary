@@ -12,6 +12,7 @@ use MoonShine\Menu\MenuItem;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuElement;
 use App\MoonShine\Resources\BlogResource;
+use App\MoonShine\Resources\ShopResource;
 use App\MoonShine\Resources\ProductResource;
 use MoonShine\Resources\MoonShineUserResource;
 use App\MoonShine\Resources\BlogCategoryResource;
@@ -43,6 +44,11 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
     protected function menu(): array
     {
         return [
+            MenuItem::make(
+                static fn() => __('Сеть магазинов'),
+                new ShopResource()
+            )->icon('heroicons.outline.building-storefront'),
+
             MenuItem::make(
                 static fn() => __('Товары'),
                 new ProductResource()
