@@ -64,7 +64,7 @@ class SelectionSeeder extends Seeder
                     'model' => $item['Модель'],
 
                     // 'modification' => $pow['model'],
-                    'modification' => $item['Модификация'],
+                    'modification' => $pow['model'],
                     'kW' => $pow['kW'],
                     'PS' => $pow['PS'],
 

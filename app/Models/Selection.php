@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use App\Filters\QueryFilter;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 
 class Selection extends Model
 {
@@ -26,4 +28,8 @@ class Selection extends Model
         'voltage',
         'mass'
     ];
+
+    public function scopeFilter(Builder $builder, QueryFilter $filter) {
+        return $filter->apply($builder);
+    }
 }

@@ -5,4 +5,5 @@ return [
     App\Providers\HelpersLoadProvider::class,
     App\Providers\MoonShineServiceProvider::class,
     Maatwebsite\Excel\ExcelServiceProvider::class,
+    App\Providers\HelpersLoadProvider::class,
 ];
