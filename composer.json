@@ -10,10 +10,10 @@
         "laravel/tinker": "^2.9",
         "league/csv": "^9.18",
         "maatwebsite/excel": "^3.1",
-        "moonshine/moonshine": "^2.23"
+        "moonshine/moonshine": "^2.23",
+        "asmi046/site_skelet": "^1.0"
     },
     "require-dev": {
-        "asmi046/site_skelet": "^1.0",
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",
