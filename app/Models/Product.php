@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use App\Filters\QueryFilter;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 
 class Product extends Model
 {
@@ -25,4 +27,9 @@ class Product extends Model
     public $casts = [
         'galery' => "Array"
     ];
+
+
+    public function scopeFilter(Builder $builder, QueryFilter $filter) {
+        return $filter->apply($builder);
+    }
 }

@@ -24,6 +24,14 @@ if (!function_exists("str_to_clem_location")) {
     }
 }
 
+if (!function_exists("clem_location_to_str")) {
+    function clem_location_to_str($str) {
+        if ($str == 1) return "прямая";
+        if ($str == 0) return "обратная";
+        return "прямая";
+    }
+}
+
 if (!function_exists("seo_data")) {
     function seo_data():SeoServices {
         return app(SeoServices::class);

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Selection;
 use Illuminate\Http\Request;
+use App\Filters\ProductFilter;
 use App\Filters\SelectorFilter;
 
 class SelectionController extends Controller
@@ -16,16 +18,8 @@ class SelectionController extends Controller
             return Selection::select()->filter($request)->get();
     }
 
-    public function get_ts_types() {
-        return Selection::select("type")->groupBy("type")->get();
-    }
-
-    public function get_ts_brands(SelectorFilter $request) {
-        return Selection::select("brand")->filter($request)->groupBy("brand")->get();
-    }
-
-    public function get_ts_models(SelectorFilter $request) {
-        return Selection::select("model")->filter($request)->groupBy("model")->get();
+    public function select_product(ProductFilter $request) {
+        return Product::select()->filter($request)->get();
     }
 
     public function select_by_car() {

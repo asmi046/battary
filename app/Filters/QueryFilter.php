@@ -25,9 +25,12 @@ class QueryFilter
     {
         $this->builder = $builder;
 
+
+
         foreach ($this->filters() as $name => $value) {
-            if (method_exists($this, $name)) {
-                call_user_func_array([$this, $name], array_filter([$value]));
+            if (method_exists($this, $name)) {;
+                // call_user_func_array([$this, $name], array_filter([$value]));
+                call_user_func_array([$this, $name], [$value]);
             }
         }
 

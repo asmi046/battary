@@ -32,7 +32,7 @@ section{
 img {
     width:100%;
     height:100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .map_in_page {
@@ -42,6 +42,14 @@ img {
 
 .hm {
     margin: 20px 0;
+}
+
+@media (max-width:1440px) {
+    .container {
+        width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @import "selection_form"

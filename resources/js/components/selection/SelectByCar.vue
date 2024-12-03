@@ -24,7 +24,23 @@
 
 <div v-show="tsModificationList.length != 0" class="modification">
     <h2 class="hm">Модификации</h2>
-    <modification-table :modifications="tsModificationList"></modification-table>
+    <modification-table v-model="selectedAkbParam" :modifications="tsModificationList"></modification-table>
+</div>
+
+<div v-show="productList.length != 0" class="product">
+    <h2 class="hm">Продукт</h2>
+    <div class="product_wrapper">
+        <div v-for="(item, index) in productList" :key="index" class="product_card">
+            <div class="photo">
+                <img :src="base_path+'/'+item.img" :alt="item.name">
+            </div>
+            <div class="text">
+                <h3>{{ item.name }}</h3>
+                <p>Габариты: <strong>{{ item.length }} / {{ item.width }} / {{ item.height }}</strong> Ток: <strong>{{ item.amperage }} (EN)</strong></p>
+                <p class="price">{{ item.price }}₽</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 </template>
@@ -44,29 +60,57 @@ import { ref, watch } from 'vue';
     let tsModelList = ref([])
     let tsModificationList = ref([])
 
+    let productList = ref([])
+
     let queryParam = {}
+    let selectedAkbParam = ref({})
+
+    const base_path = window.storage || '';
 
     watch(selectedTsType, () => {
-        selectionQuery()
         selectedTsBrand.value = ""
         selectedTsModel.value = ""
         selectedTsModification.value = ""
+        tsModificationList.value = []
+        selectionQuery()
     })
 
     watch(selectedTsBrand, () => {
-        selectionQuery()
         selectedTsModel.value = ""
         selectedTsModification.value = ""
+        tsModificationList.value = []
+        selectionQuery()
     })
 
     watch(selectedTsModel, () => {
-        selectionQuery()
         selectedTsModification.value = ""
+        tsModificationList.value = []
+        selectionQuery()
     })
+
+    watch(selectedAkbParam, (newVal, oldVal) => {
+        console.log(newVal)
+        productQuery();
+    })
+
+
+    const productQuery = () => {
+        axios.get('/select_product', {
+            params: selectedAkbParam.value
+        })
+        .then((response) => {
+            productList.value = response.data
+            console.log(response)
+        })
+        .catch( (error) => {
+            console.log(error)
+        });
+    }
 
 
     const selectionQuery = () => {
         let adr = '/selection_filter'
+        queryParam = {}
 
         if (selectedTsType.value == "") adr += "/type"
         if ((selectedTsType.value != "")&&(selectedTsBrand.value == ""))  {

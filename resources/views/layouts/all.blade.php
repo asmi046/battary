@@ -15,6 +15,12 @@
 
     <meta name="_token" content="{{ csrf_token() }}">
 
+
+    <script>
+        window.asset = "{{ asset('') }}";
+        window.storage = "{{ asset('storage') }}";
+    </script>
+
     @vite([
         'resources/css/app.css',
         'resources/js/app.js',

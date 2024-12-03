@@ -7,6 +7,7 @@
             <th>Емкость</th>
             <th>Полярность</th>
             <th>Габариты (дл/шир/выс):</th>
+            <th>Управление</th>
         </tr>
     </thead>
     <tbody>
@@ -14,8 +15,11 @@
             <td>{{ item.modification }}</td>
             <td>{{ item.PS }} / {{ item.kW }}</td>
             <td>{{ item.volume }}</td>
-            <td>{{ item.clem_location }}</td>
+            <td>{{ clemLocationToStr(item.clem_location) }}</td>
             <td>{{ item.length }} / {{ item.width }} / {{ item.height }} </td>
+            <td>
+                <a @click.prevent="selectElement(item)" class="button" href="#">Выбрать</a>
+            </td>
         </tr>
     </tbody>
   </table>
@@ -23,8 +27,29 @@
 
 <script setup>
 
+const emit = defineEmits(['update:modelValue'])
+
+const clemLocationToStr = (clem) => {
+    if (clem == 1) return "прямая";
+    if (clem == 0) return "обратная";
+    return "прямая";
+}
+
+const selectElement = (item) => {
+    let element = {}
+
+    element["volume"] = item.volume
+    element["clem_location"] = item.clem_location
+    element["width"] = item.width
+    element["height"] = item.height
+    element["length"] = item.length
+
+    emit('update:modelValue', element)
+}
+
 const props = defineProps({
-    modifications: Array
+    modifications: Array,
+    modelValue: Object
 })
 
 </script>

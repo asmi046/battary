@@ -2,3 +2,27 @@
     display: flex;
     gap:20px;
 }
+
+.product_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+
+    .product_card {
+        display: flex;
+        border:1px solid lightgray;
+        padding: 5px;
+        gap:20px;
+        border-radius: 5px;
+
+        .photo{
+            width:100px;
+            height: 100px;
+        }
+
+        .text{
+            flex:1;
+            margin: auto 0;
+        }
+    }
+}
