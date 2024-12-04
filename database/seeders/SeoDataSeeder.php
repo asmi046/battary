@@ -21,6 +21,20 @@ class SeoDataSeeder extends Seeder
                 'seo_description' => "Сеть специализированных аккумуляторных магазинов «Батарейка»",
                 'page_title' => "",
             ],
+
+            [
+                'url' => "select_by_car",
+                'seo_title' => "Подбор АКБ по марке и модели автомобиля",
+                'seo_description' => "Подбор АКБ по марке и модели автомобиля",
+                'page_title' => "",
+            ],
+
+            [
+                'url' => "select_by_params",
+                'seo_title' => "Подбор АКБ по параметрам",
+                'seo_description' => "Подбор АКБ по  параметрам",
+                'page_title' => "",
+            ],
         ];
 
         DB::table("seo_data")->insert($data);

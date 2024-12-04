@@ -30,7 +30,7 @@
     </div>
 </div>
 
-<div v-show="productList.length != 0" class="product">
+<div v-if="productList.length != 0" class="product">
     <h2 class="hm">Продукт</h2>
     <div class="product_wrapper">
         <div v-for="(item, index) in productList" :key="index" class="product_card">
@@ -46,6 +46,7 @@
         </div>
     </div>
 </div>
+<p v-else>Нет подходящих товаров в базе</p>
 
 </template>
 
@@ -79,6 +80,7 @@ import { ref, watch } from 'vue';
         selectedTsModel.value = ""
         selectedTsModification.value = ""
         tsModificationList.value = []
+        productList.value = []
         selectionQuery()
     })
 
@@ -86,12 +88,14 @@ import { ref, watch } from 'vue';
         selectedTsModel.value = ""
         selectedTsModification.value = ""
         tsModificationList.value = []
+        productList.value = []
         selectionQuery()
     })
 
     watch(selectedTsModel, () => {
         selectedTsModification.value = ""
         tsModificationList.value = []
+        productList.value = []
         selectionQuery()
     })
 
