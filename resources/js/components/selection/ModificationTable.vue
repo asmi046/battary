@@ -4,7 +4,7 @@
         <tr>
             <th>Модификация</th>
             <th>Мщьность (Лс / кВт )</th>
-            <th>Емкость</th>
+            <th>Емкость (А/ч)</th>
             <th>Полярность</th>
             <th>Габариты (дл/шир/выс):</th>
             <th>Управление</th>
@@ -30,9 +30,9 @@
 const emit = defineEmits(['update:modelValue'])
 
 const clemLocationToStr = (clem) => {
-    if (clem == 1) return "прямая";
-    if (clem == 0) return "обратная";
-    return "прямая";
+    if (clem == 1) return "Прямая";
+    if (clem == 0) return "Обратная";
+    return "Прямая";
 }
 
 const selectElement = (item) => {

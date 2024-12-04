@@ -3,7 +3,7 @@
 @section('main')
 <section id="select_app" class="select_by_car">
     <div class="container">
-        <h1 class="hm">Подбор по авто</h1>
+        <x-selection-lnk></x-selection-lnk>
         <select-by-car></select-by-car>
     </div>
 </section>

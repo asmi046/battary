@@ -29,23 +29,7 @@
         <strong>{{ selectedTsBrand }} {{ selectedTsModel }} {{ selectedAkbParam.modification }} </strong>     <span>{{ selectedAkbParam.length }} / {{ selectedAkbParam.width }} / {{ selectedAkbParam.height }}, {{ selectedAkbParam.volume }} (А/ч)</span> <a @click.prevent="clearSelectParam()" href="#" class="button">Назад к модификациям</a>
     </div>
 
-
-    <div v-show="productList.length != 0" class="product">
-        <h2 class="hm">Продукт</h2>
-        <div class="product_wrapper">
-            <div v-for="(item, index) in productList" :key="index" class="product_card">
-                <div class="photo">
-                    <img v-if="item.img != ''" :src="base_path+'/'+item.img" :alt="item.name">
-                    <img v-else :src="asset_path+'img/empty-battery.svg'" :alt="item.name">
-                </div>
-                <div class="text">
-                    <h3>{{ item.name }}</h3>
-                    <p>Габариты: <strong>{{ item.length }} / {{ item.width }} / {{ item.height }}</strong> Ток: <strong>{{ item.amperage }} (EN)</strong></p>
-                    <p class="price">{{ item.price }}₽</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <product-list v-show="productList.length != 0" :product-list="productList"></product-list>
     <p v-if="productList.length == 0 && showModificationList == false" class="hm">Нет подходящих товаров в базе</p>
 </div>
 
@@ -54,6 +38,7 @@
 
 <script setup>
 import ModificationTable from './ModificationTable.vue'
+import ProductList from './ProductList.vue'
 
 import { ref, watch } from 'vue';
 
@@ -74,8 +59,7 @@ import { ref, watch } from 'vue';
     let queryParam = {}
     let selectedAkbParam = ref({})
 
-    const base_path = window.storage || '';
-    const asset_path = window.asset || '';
+
 
     watch(selectedTsType, () => {
         selectedTsBrand.value = ""
