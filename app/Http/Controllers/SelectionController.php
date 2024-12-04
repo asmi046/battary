@@ -27,6 +27,6 @@ class SelectionController extends Controller
     }
 
     public function select_by_params() {
-
+        return view('select-by-params');
     }
 }

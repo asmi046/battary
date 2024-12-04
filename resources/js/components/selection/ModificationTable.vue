@@ -38,6 +38,7 @@ const clemLocationToStr = (clem) => {
 const selectElement = (item) => {
     let element = {}
 
+    element["modification"] = item.modification
     element["volume"] = item.volume
     element["clem_location"] = item.clem_location
     element["width"] = item.width

@@ -26,3 +26,13 @@
         }
     }
 }
+
+.select_modification {
+    display: flex;
+    gap:40px;
+
+    & > * {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}

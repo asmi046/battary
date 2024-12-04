@@ -24,7 +24,10 @@
 
 <div v-show="tsModificationList.length != 0" class="modification">
     <h2 class="hm">Модификации</h2>
-    <modification-table v-model="selectedAkbParam" :modifications="tsModificationList"></modification-table>
+    <modification-table v-if="showModificationList" v-model="selectedAkbParam" :modifications="tsModificationList"></modification-table>
+    <div v-else class="select_modification">
+        <strong>{{ selectedTsBrand }} {{ selectedTsModel }} {{ selectedAkbParam.modification }} </strong>     <span>{{ selectedAkbParam.length }} / {{ selectedAkbParam.width }} / {{ selectedAkbParam.height }}, {{ selectedAkbParam.volume }} (А/ч)</span> <a @click.prevent="clearSelectParam()" href="#" class="button">Назад к модификациям</a>
+    </div>
 </div>
 
 <div v-show="productList.length != 0" class="product">
@@ -32,7 +35,8 @@
     <div class="product_wrapper">
         <div v-for="(item, index) in productList" :key="index" class="product_card">
             <div class="photo">
-                <img :src="base_path+'/'+item.img" :alt="item.name">
+                <img v-if="item.img != ''" :src="base_path+'/'+item.img" :alt="item.name">
+                <img v-else :src="asset_path+'img/empty-battery.svg'" :alt="item.name">
             </div>
             <div class="text">
                 <h3>{{ item.name }}</h3>
@@ -60,12 +64,15 @@ import { ref, watch } from 'vue';
     let tsModelList = ref([])
     let tsModificationList = ref([])
 
+    let showModificationList = ref(false)
+
     let productList = ref([])
 
     let queryParam = {}
     let selectedAkbParam = ref({})
 
     const base_path = window.storage || '';
+    const asset_path = window.asset || '';
 
     watch(selectedTsType, () => {
         selectedTsBrand.value = ""
@@ -93,6 +100,10 @@ import { ref, watch } from 'vue';
         productQuery();
     })
 
+    const clearSelectParam = () => {
+        productList.value = []
+        showModificationList.value = true
+    }
 
     const productQuery = () => {
         axios.get('/select_product', {
@@ -100,6 +111,7 @@ import { ref, watch } from 'vue';
         })
         .then((response) => {
             productList.value = response.data
+            showModificationList.value = false
             console.log(response)
         })
         .catch( (error) => {
@@ -135,7 +147,10 @@ import { ref, watch } from 'vue';
             if (selectedTsType.value == "") tsTypeList.value = response.data
             if ((selectedTsType.value != "")&&(selectedTsBrand.value == "")) tsBrandlList.value = response.data
             if ((selectedTsType.value != "")&&(selectedTsBrand.value != "")&&(selectedTsModel.value == "")) tsModelList.value = response.data
-            if ((selectedTsType.value != "")&&(selectedTsBrand.value != "")&&(selectedTsModel.value != "")) tsModificationList.value = response.data
+            if ((selectedTsType.value != "")&&(selectedTsBrand.value != "")&&(selectedTsModel.value != "")) {
+                tsModificationList.value = response.data
+                showModificationList.value = true;
+            }
             console.log(response)
         })
         .catch( (error) => {
