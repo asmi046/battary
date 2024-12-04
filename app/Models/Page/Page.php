@@ -1,21 +1,29 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Page;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BlogCategory extends Model
+use Illuminate\Support\Str;
+
+class Page extends Model
 {
-    public $fillable = [
+    use HasFactory;
+
+
+    protected $fillable = [
         'title',
         'slug',
+        'img',
         'description',
+        'seo_title',
+        'seo_description',
     ];
 
-    public function pages() {
-        return $this->belongsToMany(Blog::class);
-    }
-
+    protected $allowedSorts = [
+        'title',
+    ];
 
     public function setSlugAttribute($value)
     {
@@ -24,4 +32,5 @@ class BlogCategory extends Model
         else
             $this->attributes['slug'] =  $value;
     }
+
 }

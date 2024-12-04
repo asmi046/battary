@@ -15,6 +15,15 @@ return Application::configure(basePath: dirname(__DIR__))
 
             Route::middleware('web')
                 ->group(base_path('routes/select.php'));
+
+            Route::middleware('web')
+                ->group(base_path('routes/blog.php'));
+
+            Route::middleware('web')
+                ->group(base_path('routes/product.php'));
+
+            Route::middleware('web')
+                ->group(base_path('routes/compare.php'));
         }
     )
     ->withMiddleware(function (Middleware $middleware) {
