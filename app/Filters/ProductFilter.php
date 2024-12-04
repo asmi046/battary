@@ -9,6 +9,11 @@ class ProductFilter extends QueryFilter {
             $this->builder->where("volume", ">", $volume-5)->Where("volume", "<", $volume+5);
     }
 
+    public function amperage($amperage) {
+        if  (!empty($amperage))
+            $this->builder->where("amperage", ">", $amperage-5)->Where("amperage", "<", $amperage+5);
+    }
+
     public function clem_location($clem_location) {
         if  (!empty($clem_location) )
             $this->builder->where("clem_location", $clem_location);
