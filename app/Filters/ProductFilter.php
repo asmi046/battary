@@ -29,7 +29,7 @@ class ProductFilter extends QueryFilter {
     public function width($width) {
 
         if  (!empty($width) && $width !== "%")
-            $this->builder->where("width", ">", $width-config('select_range.size_minus'))->Where("volume", "<", $width+config('select_range.size_plus'));
+            $this->builder->where("width", ">", $width-config('select_range.size_minus'))->Where("width", "<", $width+config('select_range.size_plus'));
     }
 
     public function height($height) {
