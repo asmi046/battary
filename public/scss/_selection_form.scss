@@ -1,6 +1,17 @@
 .select_form {
     display: flex;
     gap:20px;
+
+    .field {
+        flex:1;
+        margin-bottom: 0;
+    }
+
+    .button {
+        max-height: 30px;
+        margin-top: auto;
+        margin-bottom: 2px;
+    }
 }
 
 .product_wrapper {
@@ -24,6 +35,15 @@
             flex:1;
             margin: auto 0;
         }
+    }
+}
+
+.control_panel {
+    display: flex;
+    margin-bottom: 20px;
+    select {
+        width:30%;
+        min-width: 300px;
     }
 }
 

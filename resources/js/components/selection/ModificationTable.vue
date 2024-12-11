@@ -3,7 +3,7 @@
     <thead>
         <tr>
             <th>Модификация</th>
-            <th>Мщьность (Лс / кВт )</th>
+            <th>Мощьность (Лс / кВт )</th>
             <th>Емкость (А/ч)</th>
             <th>Полярность</th>
             <th>Габариты (дл/шир/выс):</th>
@@ -40,7 +40,7 @@ const selectElement = (item) => {
 
     element["modification"] = item.modification
     element["volume"] = item.volume
-    element["clem_location"] = item.clem_location
+    element["clem_location"] = clemLocationToStr(item.clem_location)
     element["width"] = item.width
     element["height"] = item.height
     element["length"] = item.length
