@@ -1,51 +1,55 @@
 <template>
     <form class="select_form select_form_by_param" action="">
-        <select v-model="selectedSize" name="" id="">
-            <option disabled value="">Выберите габариты</option>
-            <option v-for="(value, key) in sizeList" :key="key" :value="key">
-                {{ key }}
-            </option>
-        </select>
-        <select :disabled="selectedSize == ''" v-model="selectedVolume" name="" id="">
-            <option disabled value="">Выберите емкость</option>
-            <option v-for="(item, index) in volumeList" :key="index" :value="item.volume">
-                {{ item.volume }}
-            </option>
-        </select>
+        <div class="field">
+            <label for="size_select_component">Выберите габариты</label>
+            <select v-model="selectedSize" name="" id="size_select_component">
 
-        <select :disabled="selectedVolume == ''" v-model="selectedAmperage" name="" id="">
-            <option disabled value="">Выберите стартовый ток</option>
-            <option v-for="(item, index) in amperageList" :key="index" :value="item.amperage">
-                {{ item.amperage }}
-            </option>
-        </select>
+                <option v-for="(value, key) in sizeList" :key="key" :value="key">
+                    {{ key == "%"?"Любые":key }}
+                </option>
+            </select>
+        </div>
 
-        <select :disabled="selectedAmperage == ''" v-model="selectedClemLocation" name="" id="">
-            <option disabled value="">Выберите полярность</option>
-            <option v-for="(item, index) in clemLocationList" :key="index" :value="item.clem_location">
-                {{ clemLocationToStr(item.clem_location) }}
-            </option>
-        </select>
+        <div class="field">
+            <label for="clemm_select_component">Выберите полярность</label>
+            <select :disabled="selectedSize == '%'" v-model="selectedClemLocation" name="" id="clemm_select_component">
+                <option selected value="%">Любая</option>
+                <option v-for="(item, index) in clemLocationList" :key="index" :value="clemLocationToStr(item.clem_location)">
+                    {{ clemLocationToStr(item.clem_location) }}
+                </option>
+            </select>
+        </div>
 
-        <button @click.prevent="getProductList()" class="button">Подобрать</button>
+        <div class="field">
+            <label for="volume_select_component">Выберите емкость</label>
+            <select :disabled="selectedClemLocation == '%'" v-model="selectedVolume" name="" id="volume_select_component">
+                <option selected value="%">Любая</option>
+                <option v-for="(item, index) in volumeList" :key="index" :value="item.volume">
+                    {{ item.volume }}
+                </option>
+            </select>
+        </div>
+        <!-- <button @click.prevent="getProductList()" class="button">Подобрать</button> -->
     </form>
 
-    <product-list v-show="productList.length != 0" :product-list="productList"></product-list>
+    <product-list v-show="productList.length != 0" :product-list="productList" v-model="order"></product-list>
 </template>
 
 <script setup>
 import { ref, watch } from 'vue';
 import ProductList from './ProductList.vue'
 
-    let selectedSize = ref("")
-    let selectedVolume = ref("")
+    let order = ref("")
+
+    let selectedSize = ref("%")
+    let selectedVolume = ref("%")
     let selectedAmperage = ref("")
-    let selectedClemLocation = ref("")
+    let selectedClemLocation = ref("%")
 
 
     let sizeList = ref([])
     let volumeList = ref([])
-    let amperageList = ref([])
+    // let amperageList = ref([])
     let clemLocationList = ref([])
 
 
@@ -71,9 +75,9 @@ import ProductList from './ProductList.vue'
             queryParam['volume'] = selectedVolume.value
         }
 
-        if (selectedAmperage.value != "") {
-            queryParam['amperage'] = selectedAmperage.value
-        }
+
+        queryParam['order'] = (order.value)?order.value:"Сначала дорогие"
+
 
         if (selectedClemLocation.value != "") {
             queryParam['clem_location'] = selectedClemLocation.value
@@ -94,47 +98,48 @@ import ProductList from './ProductList.vue'
     }
 
     watch(selectedSize, () => {
-        selectedVolume.value = ""
-        selectedAmperage.value = ""
-        selectedClemLocation.value = ""
+        selectedVolume.value = "%"
+        selectedClemLocation.value = "%"
         selectionQuery()
+        getProductList()
+    })
+
+    watch(selectedClemLocation, () => {
+        selectedVolume.value = "%"
+        selectionQuery()
+        getProductList()
     })
 
     watch(selectedVolume, () => {
-        selectedAmperage.value = ""
-        selectedClemLocation.value = ""
-        selectionQuery()
+        getProductList()
     })
 
-    watch(selectedAmperage, () => {
-        selectedClemLocation.value = ""
-        selectionQuery()
+    watch(order, () => {
+        console.log(order.value)
+        getProductList()
     })
+
 
 
     const selectionQuery = () => {
         let adr = '/parametr_filter'
 
-        if (selectedVolume.value == "")  {
+        if (selectedClemLocation.value == "%")  {
+            adr += "/clem_location"
+        }
+
+        if ((selectedClemLocation.value != "%") && (selectedVolume.value == "%"))  {
             adr += "/volume"
         }
 
-        if ((selectedVolume.value != "") && (selectedAmperage.value == ""))  {
-            adr += "/amperage"
-        }
-
-        if ((selectedVolume.value != "") && (selectedAmperage.value != "") && (selectedClemLocation.value == ""))  {
-            adr += "/clem_location"
-        }
 
         axios.get(adr, {
             params: getQueryParam()
         })
         .then((response) => {
-            if (selectedVolume.value == "") volumeList.value = response.data
-            if ((selectedVolume.value != "") && (selectedAmperage.value == "")) amperageList.value = response.data
-            if ((selectedVolume.value != "") && (selectedAmperage.value != "") && (selectedClemLocation.value == "")) clemLocationList.value = response.data
-            console.log(response)
+            if (selectedClemLocation.value == "%")  clemLocationList.value = response.data
+            if ((selectedClemLocation.value != "%") && (selectedVolume.value == "%")) volumeList.value = response.data
+            console.log(volumeList.value)
         })
         .catch( (error) => {
             console.log(error)

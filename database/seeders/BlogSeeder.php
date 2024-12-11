@@ -35,6 +35,14 @@ class BlogSeeder extends Seeder
             ]
         );
 
+        DB::table("seo_data")->insert(
+                [
+                    'url' => 'wiki/'.Str::slug("Тюменский Аккумуляторный Завод"),
+                    'seo_title' => "Тюменский Аккумуляторный Завод",
+                    'seo_description' => "Тюменский Аккумуляторный Завод",
+                ],
+        );
+
 
         $elem_id = DB::table("blogs")->insertGetId(
             [
@@ -50,6 +58,14 @@ class BlogSeeder extends Seeder
                 'blog_id' => $elem_id,
                 'blog_category_id' => 2,
             ]
+        );
+
+        DB::table("seo_data")->insert(
+            [
+                'url' => 'wiki/'.Str::slug("Использование вторсырья при производстве аккумуляторов"),
+                'seo_title' => "Использование вторсырья при производстве аккумуляторов",
+                'seo_description' => "Использование вторсырья при производстве аккумуляторов",
+            ],
         );
     }
 }

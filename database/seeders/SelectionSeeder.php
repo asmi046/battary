@@ -53,6 +53,9 @@ class SelectionSeeder extends Seeder
 
         $index = 0;
         foreach ($records as $item) {
+
+            if (in_array($item['Type'], ["Газонокосилка", "Гидроцикл", "Яхта / Лодка", "Прицеп / Автодом"]) ) continue;
+
             $pow = $this->get_power($item);
 
             echo $index." - ".$item['Модель']." ".$item['Бренд']." - ".$item['АКБ']." ".$pow['kW']." / ".$pow['PS']."\n\r";

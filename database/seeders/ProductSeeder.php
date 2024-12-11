@@ -52,6 +52,14 @@ class ProductSeeder extends Seeder
             print_r($inserted);
             DB::table("products")->insert($inserted);
             $index++;
+
+            DB::table("seo_data")->insert(
+                [
+                    'url' => 'product/'.$inserted['slug'],
+                    'seo_title' => $inserted['name'],
+                    'seo_description' => $inserted['name'],
+                ]
+            );
         }
     }
 }

@@ -1,6 +1,19 @@
 <template>
     <div class="product">
         <h2 class="hm">Продукты</h2>
+
+
+        <div class="control_panel">
+            <div class="field">
+                <label for="order_component">Сортировка</label>
+                <select v-model="order" name="" id="order_component">
+                    <option selected value="Сначала дорогие">Сначала дорогие</option>
+                    <option value="Сначала дешевые">Сначала дешевые</option>
+                    <option value="Сначала большей екмкости">Сначала большей екмкости</option>
+                    <option value="Сначала меньшей екмкости">Сначала меньшей екмкости</option>
+                </select>
+            </div>
+        </div>
         <div class="product_wrapper">
             <div v-for="(item, index) in props.productList" :key="index" class="product_card">
                 <div class="photo">
@@ -23,8 +36,20 @@
 </template>
 
 <script setup>
+    import { ref, watch } from 'vue';
+
+    const emit = defineEmits(['update:modelValue'])
+
+    let order = ref("Сначала дорогие")
+
     const props = defineProps({
         productList: Array,
+        modelValue: String
+    })
+
+    watch(order, () => {
+        console.log('order - '+order.value);
+        emit('update:modelValue', order.value)
     })
 
     const clemLocationToStr = (clem) => {

@@ -7,6 +7,7 @@ use App\Models\Selection;
 use Illuminate\Http\Request;
 use App\Filters\ProductFilter;
 use App\Filters\SelectorFilter;
+use App\Services\OrderServices;
 
 class SelectionController extends Controller
 {
@@ -14,6 +15,13 @@ class SelectionController extends Controller
     public function get_akb_size_list() {
         $all_product = Product::all();
         $result = [];
+
+        $result["%"] = [
+            "text" => "%",
+            "length" => "%",
+            "width" => "%",
+            "height" => "%",
+        ];
         foreach ($all_product as $item) {
             $key = $item->length." / ".$item->width." / ".$item->height;
             $result[$key] = [
@@ -24,14 +32,26 @@ class SelectionController extends Controller
             ];
         }
 
+        uasort($result, function ($a, $b) {
+            // dd($a['length'], $b['length']);
+
+            return ($a['length'] <= $b['length'])?-1:1;
+
+        });
+
         return $result;
     }
 
-    public function selection_filter(SelectorFilter $request, string $group = "") {
+    public function selection_filter(SelectorFilter $request, OrderServices $order, string $group = "") {
+        $resuilt = [];
         if (!empty($group))
-            return Selection::select($group)->filter($request)->groupBy($group)->get();
+            $resuilt = Selection::select($group)->filter($request)->groupBy($group)->get();
         else
-            return Selection::select()->filter($request)->get();
+            $resuilt = Selection::select()->filter($request)->get();
+
+        if ($group === 'type') return $order->sort_type_ts($resuilt);
+
+        return $resuilt;
     }
 
     public function parametr_filter(ProductFilter $request, string $group = "") {

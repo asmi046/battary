@@ -4,6 +4,12 @@ use App\Services\SeoServices;
 
 
 
+if (!function_exists("procent_calc")) {
+    function procent_calc($value, $procent) {
+        return $value * ($procent / 100);
+    }
+}
+
 if (!function_exists("str_to_hvl")) {
     function str_to_hvl($str) {
         $result = explode('/', $str);
