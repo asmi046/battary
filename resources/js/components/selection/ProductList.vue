@@ -9,8 +9,8 @@
                 <select v-model="order" name="" id="order_component">
                     <option selected value="Сначала дорогие">Сначала дорогие</option>
                     <option value="Сначала дешевые">Сначала дешевые</option>
-                    <option value="Сначала большей екмкости">Сначала большей екмкости</option>
-                    <option value="Сначала меньшей екмкости">Сначала меньшей екмкости</option>
+                    <option value="Сначала большей ёмкости">Сначала большей ёмкости</option>
+                    <option value="Сначала меньшей ёмкости">Сначала меньшей ёмкости</option>
                 </select>
             </div>
         </div>
