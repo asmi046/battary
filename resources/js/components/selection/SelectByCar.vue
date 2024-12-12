@@ -29,7 +29,7 @@
         <strong>{{ selectedTsBrand }} {{ selectedTsModel }} {{ selectedAkbParam.modification }} </strong>     <span>{{ selectedAkbParam.length }} / {{ selectedAkbParam.width }} / {{ selectedAkbParam.height }}, {{ selectedAkbParam.volume }} (А/ч)</span> <a @click.prevent="clearSelectParam()" href="#" class="button">Назад к модификациям</a>
     </div>
 
-    <product-list v-show="productList.length != 0" :product-list="productList"></product-list>
+    <product-list v-show="productList.length != 0" :product-list="productList" v-model="order"></product-list>
     <p v-if="productList.length == 0 && showModificationList == false" class="hm">Нет подходящих товаров в базе</p>
 </div>
 
@@ -41,6 +41,8 @@ import ModificationTable from './ModificationTable.vue'
 import ProductList from './ProductList.vue'
 
 import { ref, watch } from 'vue';
+
+    let order = ref("")
 
     let selectedTsType = ref("");
     let selectedTsBrand = ref("");
@@ -88,6 +90,12 @@ import { ref, watch } from 'vue';
     watch(selectedAkbParam, (newVal, oldVal) => {
         console.log(newVal)
         productQuery();
+    })
+
+
+    watch(order, () => {
+        selectedAkbParam.value['order'] = order.value
+        productQuery()
     })
 
     const clearSelectParam = () => {

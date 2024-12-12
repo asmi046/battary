@@ -38,6 +38,7 @@ const clemLocationToStr = (clem) => {
 const selectElement = (item) => {
     let element = {}
 
+    element["order"] = "Сначала дорогие"
     element["modification"] = item.modification
     element["volume"] = item.volume
     element["clem_location"] = clemLocationToStr(item.clem_location)
