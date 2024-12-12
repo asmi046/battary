@@ -21,3 +21,11 @@ table {
         background-color: #EBEBEB;
     }
 }
+
+@media (max-width:1024px) {
+    .table_wrapper {
+        width:100%;
+        overflow-x: auto;
+    }
+}
+

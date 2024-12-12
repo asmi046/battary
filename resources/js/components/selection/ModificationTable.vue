@@ -1,28 +1,30 @@
 <template>
-  <table>
-    <thead>
-        <tr>
-            <th>Модификация</th>
-            <th>Мощьность (Лс / кВт )</th>
-            <th>Емкость (А/ч)</th>
-            <th>Полярность</th>
-            <th>Габариты (дл/шир/выс):</th>
-            <th>Управление</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr v-for="(item, index) in props.modifications" :key="index">
-            <td>{{ item.modification }}</td>
-            <td>{{ item.PS }} / {{ item.kW }}</td>
-            <td>{{ item.volume }}</td>
-            <td>{{ clemLocationToStr(item.clem_location) }}</td>
-            <td>{{ item.length }} / {{ item.width }} / {{ item.height }} </td>
-            <td>
-                <a @click.prevent="selectElement(item)" class="button" href="#">Выбрать</a>
-            </td>
-        </tr>
-    </tbody>
-  </table>
+  <div class="table_wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th>Модификация</th>
+                <th>Мощьность (Лс / кВт )</th>
+                <th>Емкость (А/ч)</th>
+                <th>Полярность</th>
+                <th>Габариты (дл/шир/выс):</th>
+                <th>Управление</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(item, index) in props.modifications" :key="index">
+                <td>{{ item.modification }}</td>
+                <td>{{ item.PS }} / {{ item.kW }}</td>
+                <td>{{ item.volume }}</td>
+                <td>{{ clemLocationToStr(item.clem_location) }}</td>
+                <td>{{ item.length }} / {{ item.width }} / {{ item.height }} </td>
+                <td>
+                    <a @click.prevent="selectElement(item)" class="button" href="#">Выбрать</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
 </template>
 
 <script setup>
