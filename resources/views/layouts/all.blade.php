@@ -28,8 +28,30 @@
     ])
 </head>
 <body>
+    @include("allicon")
     <main id="main">
+        <header>
+            <div class="container">
+                <div class="geo">
+                    <x-icon-a class="search_lnk" href="#" ancor="Регион" icon="map_pin_icon"></x-icon-a>
+                </div>
+
+                <div class="menue_side">
+                    <x-menues.puncts></x-menues.puncts>
+                </div>
+            </div>
+        </header>
+
         @yield('main')
+
+        <footer>
+            <div class="container">
+                <div class="col col_logo"></div>
+                <div class="col col_menue"></div>
+                <div class="col col_menue"></div>
+                <div class="col col_contact"></div>
+            </div>
+        </footer>
     </main>
 </body>
 </html>

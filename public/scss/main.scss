@@ -5,8 +5,7 @@
 @import "text-styles";
 @import "pagination";
 @import "standart";
-@import "form/all-form";
-@import "elements/all-elements";
+
 
 
 body{
@@ -70,7 +69,12 @@ img {
     }
 }
 
-@import "selection_form"
+@import "form/all-form";
+@import "elements/all-elements";
+@import "icon-a";
+
+@import "header";
+@import "selection_form";
 
 // Схема с сайдбаром
 // @import "sidebar-schem";

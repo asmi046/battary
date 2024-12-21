@@ -1,3 +1,11 @@
 footer {
-    
+    background-color: $blue_color;
+    color:white;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        col {
+            flex:1;
+        }
+    }
 }
