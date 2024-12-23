@@ -30,26 +30,30 @@
 <body>
     @include("allicon")
     <main id="main">
-        <header>
-            <div class="container">
-                <div class="geo">
-                    <x-icon-a class="search_lnk" href="#" ancor="Регион" icon="map_pin_icon"></x-icon-a>
-                </div>
+        <x-sections.header></x-sections.header>
+        <x-sections.header-control></x-sections.header-control>
 
-                <div class="menue_side">
-                    <x-menues.puncts></x-menues.puncts>
-                </div>
-            </div>
-        </header>
 
         @yield('main')
 
         <footer>
             <div class="container">
-                <div class="col col_logo"></div>
-                <div class="col col_menue"></div>
-                <div class="col col_menue"></div>
-                <div class="col col_contact"></div>
+                <div class="col col_logo">
+                    <a class="logo" href="{{ route('home') }}">
+                        <img src="{{ asset('img/logo-full.svg')}}" alt="{{ config('asmiseo.title_postfix')}}">
+                    </a>
+                    <x-social></x-social>
+                    <p class="copyright">© Все права защищены</p>
+                </div>
+                <div class="col col_menue">
+                    <p class="fheader">Навигация</p>
+                </div>
+                <div class="col col_menue">
+                    <p class="fheader">Катклог</p>
+                </div>
+                <div class="col col_contact">
+                    <p class="fheader">Контакты</p>
+                </div>
             </div>
         </footer>
     </main>

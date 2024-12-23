@@ -52,3 +52,13 @@
 
 }
 
+.top_menu {
+    display: flex;
+    gap:20px;
+    a{
+        &:hover {
+            color:$hover_color;
+        }
+    }
+}
+

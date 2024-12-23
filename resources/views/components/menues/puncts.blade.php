@@ -1,4 +1,4 @@
-<ul>
+<ul class="top_menu">
     @if ($puncts)
         @foreach ($puncts as $item)
             <li>

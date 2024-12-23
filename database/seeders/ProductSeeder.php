@@ -30,6 +30,7 @@ class ProductSeeder extends Seeder
                 Storage::disk('public')->put($imgUrl, file_get_contents($item['img']), 'public');
             }
 
+            $popular = ($index % 18) == 0;
 
             echo $item['gabarits']."\n\r";
             $gab = str_to_hvl($item['gabarits']);
@@ -46,6 +47,7 @@ class ProductSeeder extends Seeder
                 'volume' => $item['emkost'],
                 'clem_location' => str_to_clem_location($item['polarnost']),
                 'voltage' => $item['voltage'],
+                'popular' => $popular,
                 'type' => $item['nazn'],
             ];
 

@@ -1,0 +1,29 @@
+.util_wrapper {
+    display: flex;
+    gap:20px;
+
+    .info {
+        flex:1;
+        background-color: $yello_color;
+        border-radius: $border_rad;
+        padding: 30px;
+        h2 {
+            font-size: 42px;
+        }
+
+        p {
+            margin: 40px 0;
+        }
+
+    }
+
+    .photo {
+        flex:1;
+        border-radius: $border_rad;
+        overflow: hidden;
+
+        img{
+            object-fit: cover;
+        }
+    }
+}

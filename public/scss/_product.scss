@@ -1,0 +1,51 @@
+.product_list_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap:40px
+}
+
+.product_card{
+    width:23%;
+    border: 1px solid $gray_border_color;
+    border-radius: $border_rad;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    & > * {
+        padding: 5px 20px;
+    }
+
+    .img {
+        height: 260px;
+        display: flex;
+        img{
+            margin: auto;
+        }
+
+        .empty_battary {
+            width: 50%;
+
+        }
+    }
+
+    h3 {
+        font-size:16px;
+    }
+
+    .price {
+        margin-top: auto;
+        color: $main_color;
+        font-weight: bold;
+    }
+
+    .control_panel {
+        display: flex;
+        justify-content: space-between;
+        gap:20px;
+        .more {
+            flex: 1;
+        }
+    }
+}

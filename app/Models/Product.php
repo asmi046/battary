@@ -12,6 +12,7 @@ class Product extends Model
         'name',
         'slug',
         'img',
+        'old_price',
         'price',
         'amperage',
         'height',
@@ -20,6 +21,7 @@ class Product extends Model
         'volume',
         'clem_location',
         'voltage',
+        'popular',
         'type',
         'galery'
     ];

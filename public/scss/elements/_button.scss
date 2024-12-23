@@ -28,3 +28,84 @@ button,
         text-decoration: none;
     }
 }
+
+.button-yellow {
+    background-color: $yello_color;
+    border-color: $yello_color;
+    color: $black_color;
+    &:hover {
+        background-color: $yello_color_hover;
+        border-color: $yello_color_hover;
+    }
+}
+
+.button-yellow {
+    background-color: $yello_color;
+    border-color: $yello_color;
+    color: $black_color;
+    &:hover {
+        background-color: $yello_color_hover;
+        border-color: $yello_color_hover;
+    }
+}
+
+.button-white {
+    background-color: white;
+    border-color: white;
+    color: $black_color;
+    &:hover {
+        background-color: $yello_color;
+        border-color: $yello_color;
+        color: $black_color;
+    }
+}
+
+
+
+
+.slide_button_wrapper {
+    display: flex;
+    gap:10px;
+    position: absolute;
+
+    .slide_button {
+        border-radius: 40px;
+        border:1px solid $gray_border_color;
+        background-color: white;
+        width: 35px;
+        height: 35px;
+        display: flex;
+
+        &.slide_button_next {
+            transform: rotate(180deg);
+        }
+
+        .sprite_icon {
+            width: 8px;
+            height: 15px;
+            margin: auto;
+        }
+
+        &:hover {
+            background-color: $yello_color;
+        }
+    }
+}
+
+.compare_button {
+    background-color: $yello_color;
+    border-radius: $border_rad_big;
+    width:42px;
+    height: 42px;
+    display: flex;
+
+    .sprite_icon {
+        width:21px;
+        height: 21px;
+        margin: auto;
+    }
+
+    &:hover {
+        background-color: $yello_color_hover;
+    }
+}
