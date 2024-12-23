@@ -10,11 +10,13 @@ use Illuminate\Contracts\View\View;
 class Puncts extends Component
 {
     public $puncts;
+    public $wrap_class;
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $name = "Главное меню")
+    public function __construct(string $name = "Главное меню", string $wrap = "top_menu")
     {
+        $this->wrap_class = $wrap;
         try {
             $this->puncts = Menu::where('menu', $name)->get();
         } catch (\Throwable $e) {

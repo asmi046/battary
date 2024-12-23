@@ -1,7 +1,8 @@
 .about-in-main {
-    .container {
+    .container .about_text_in_main {
         background-color: $gray_bg_color;
-        padding: 40px;;
+        padding: 40px;
         border-radius: $border_rad;
+        width: unset;
     }
 }

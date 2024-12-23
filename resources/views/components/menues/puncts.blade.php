@@ -1,4 +1,4 @@
-<ul class="top_menu">
+<ul class="{{$wrap_class}}">
     @if ($puncts)
         @foreach ($puncts as $item)
             <li>
@@ -6,5 +6,4 @@
             </li>
         @endforeach
     @endif
-
 </ul>

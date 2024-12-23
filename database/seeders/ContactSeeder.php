@@ -16,63 +16,57 @@ class ContactSeeder extends Seeder
     {
         $data = [
             [
+                'name' => "Организация",
+                'key' => "organ",
+                'value' => "",
+            ],
+
+            [
                 'name' => "Телефон",
                 'key' => "phone",
-                'value' => "+7 (910) 277-78-78",
+                'value' => "+7 (4712) 35-44-25",
             ],
 
             [
                 'name' => "Телефон (дополнительный)",
                 'key' => "phone2",
-                'value' => "+7 (910) 277-78-78",
+                'value' => "+7 (4712) 35-44-25",
             ],
 
             [
                 'name' => "E-mail",
                 'key' => "email",
-                'value' => "dentalica-kursk@mail.ru",
+                'value' => "",
             ],
 
             [
                 'name' => "Адрес",
                 'key' => "adress",
-                'value' => "г. Курск, пр. В.Клыкова, 60, оф. 12",
+                'value' => "г. Курск, ул. Моковская, 17",
             ],
 
             [
                 'name' => "Координаты",
                 'key' => "geo",
-                'value' => "51.71947107227563,36.13571149999994",
+                'value' => "",
             ],
 
             [
                 'name' => "Ссылка на VK",
                 'key' => "vk",
-                'value' => "https://vk.com/dentalica_46",
+                'value' => "#",
             ],
 
             [
                 'name' => "Ссылка на Telegram",
                 'key' => "tg",
-                'value' => "https://t.me/dentalica46",
+                'value' => "#",
             ],
 
             [
                 'name' => "Ссылка на WhatsApp",
                 'key' => "ws",
-                'value' => "https://wa.me/79102777878",
-            ],
-
-            [
-                'name' => "Ссылка на Одноклассники",
-                'key' => "ok",
                 'value' => "#",
-            ],
-
-            [
-                'name' => "Ссылка на Instagramm",
-                'key' => "in",
-                'value' => "https://www.instagram.com/dentalica46",
             ],
 
         ];

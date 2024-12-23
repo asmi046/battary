@@ -49,3 +49,24 @@
         }
     }
 }
+
+.product_list_slider {
+    position:relative;
+    padding-bottom: 60px;
+
+    .product_card{
+        width: calc(100% - 2px);
+        height: 100%;
+
+    }
+    .slide_button_wrapper {
+        position: absolute;
+        right:0;
+        bottom: 0;
+    }
+
+    swiper-slide {
+        height: auto;
+        margin-bottom: 5px;
+    }
+}

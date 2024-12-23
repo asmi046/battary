@@ -26,7 +26,7 @@ return new class extends Migration
             $table->float('volume', 6, 2)->nullable()->comment('Емкость');
             $table->integer('clem_location')->nullable()->nullable()->comment('Расположение клемм');
             $table->integer('voltage')->nullable()->comment('Вольтаж');
-            $table->boolean('{{popular}}')->defaulr(false)->comment('Популярный товар');
+            $table->boolean('popular')->defaulr(false)->comment('Популярный товар');
             $table->string('type', 70)->nullable()->comment('Тип');
             $table->json('galery')->nullable()->comment('Галерея изображений');
 
