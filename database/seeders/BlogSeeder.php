@@ -24,7 +24,7 @@ class BlogSeeder extends Seeder
                 'title' => "Тюменский Аккумуляторный Завод",
                 'slug' => Str::slug("Тюменский Аккумуляторный Завод"),
                 'img' => 'blog/taz.webp',
-                'description' => public_path('site_data/blog/taz.html')
+                'description' => file_get_contents(public_path('site_data/blog/taz.html'))
             ]
         );
 
@@ -49,7 +49,7 @@ class BlogSeeder extends Seeder
                 'title' => "Использование вторсырья при производстве аккумуляторов",
                 'slug' => Str::slug("Использование вторсырья при производстве аккумуляторов"),
                 'img' => 'blog/vtor.webp',
-                'description' => public_path('site_data/blog/vtors.html')
+                'description' => file_get_contents(public_path('site_data/blog/vtors.html'))
             ]
         );
 

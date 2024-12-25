@@ -2,19 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
     public function index() {
-        return view('wiki.index');
+
+        $all_posts = Blog::select()->paginate(12);
+        $all_post_cat = BlogCategory::all();
+
+        return view('wiki.index', [
+            'posts' => $all_posts,
+            'cats' => $all_post_cat,
+        ]);
     }
 
     public function wiki_cat() {
         return view('wiki.cat');
     }
 
-    public function wiki_page() {
-        return view('wiki.page');
+    public function wiki_page($slug) {
+        $post = Blog::where('slug', $slug)->first();
+        if(!$post) abort('404');
+
+        return view('wiki.page', [
+            'post' => $post
+        ]);
     }
 }
