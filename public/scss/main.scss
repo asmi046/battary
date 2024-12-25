@@ -97,6 +97,13 @@ img {
     }
 }
 
+.bg_h1_page {
+    background-color: $gray_bg_color;
+    font-size: 36px;
+    padding: 10px 20px;
+    border-radius: $border_rad;
+}
+
 .section_h2 {
     font-size: 36px;
     font-weight: bold;
@@ -109,6 +116,17 @@ swiper-container {
     height: 100%;
     border-radius: $border_rad;
     overflow: hidden;
+}
+
+.uni_breadcrumbs {
+    font-size: 14px;
+    a {
+        color:$blue_color;
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
 }
 
 @media (max-width:1440px) {

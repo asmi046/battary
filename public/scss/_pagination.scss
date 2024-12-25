@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: right;
+    margin-top: 20px;
 }
 
 .pagination__nav-links {
@@ -18,28 +19,29 @@
 	display: flex;
 	padding: 5px 5px;
 	min-width: 30px;
-	color: #C6C6C6;
+	color: $black_color;;
 	align-items: center;
 	justify-content: center;
 	border: 1px solid #C6C6C6;
 	margin-right: 10px;
 	transition: all 0.3s ease 0s;
+    border-radius: $border_rad;
 
 	&:last-child {
 		margin-right: 0;
 	}
 
 	&.current {
-		color: #fff;
-		background-color: $main_color;
-		border: 1px solid $main_color;
+		color: $black_color;
+		background-color: $yello_color;
+		border: 1px solid $yello_color;
 	}
 
 	@media (min-width:1025px) {
 		&:hover {
-			color: #fff;
-			background-color: $main_color;
-			border: 1px solid $main_color;
+			color: $black_color;
+			background-color: $yello_color;
+			border: 1px solid $yello_color;
 		}
 	}
 }

@@ -185,9 +185,26 @@
 }
 
 
+@media (max-width:1024px) {
+
+    .product_list_wrapper {
+        .product_card{
+            width: 31%;
+        }
+    }
+
+}
+
 @media (max-width:768px) {
     .product_page_wrapper {
         flex-direction: column;
+    }
+
+
+    .product_list_wrapper {
+        .product_card{
+            width: 47%;
+        }
     }
 }
 
@@ -219,4 +236,27 @@
             }
         }
     }
+
+    .product_card{
+        width: 47%;
+        .img {
+            height: 150px;
+        }
+
+        & > * {
+            padding: 5px 10px;
+        }
+        .control_panel {
+            gap:10px;
+            flex-direction: column;
+
+            .compare_button {
+                width: unset;
+                span {
+                    margin: auto 10px auto auto ;
+                }
+            }
+        }
+    }
+
 }

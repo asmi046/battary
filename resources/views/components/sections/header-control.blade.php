@@ -5,8 +5,8 @@
                 <img src="{{ asset('img/logo-full.svg')}}" alt="{{ config('asmiseo.title_postfix')}}">
             </a>
 
-            <form class="search_form" action="get">
-                <input type="text" name="search_str" placeholder="Поиск">
+            <form class="search_form" action="{{ route('search') }}" method="get">
+                <input type="text" name="q" placeholder="Поиск" value="{{ Request::input('q') }}">
                 <button>
                     <svg class="sprite_icon">
                         <use xlink:href="#leens_icon"></use>
@@ -22,7 +22,7 @@
 
 
         <form class="search_form mobil_search_form" action="get">
-            <input type="text" name="search_str" placeholder="Поиск">
+            <input type="text" name="q" placeholder="Поиск" value="{{ Request::input('q') }}">
             <button>
                 <svg class="sprite_icon">
                     <use xlink:href="#leens_icon"></use>

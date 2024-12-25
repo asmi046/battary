@@ -99,6 +99,10 @@ button,
     height: 42px;
     display: flex;
 
+    span {
+        display: none;
+    }
+
     .sprite_icon {
         width:21px;
         height: 21px;
@@ -108,6 +112,15 @@ button,
     &:hover {
         background-color: $yello_color_hover;
     }
+
+    @media (max-width:480px) {
+        .compare_button {
+
+        }
+		span {
+            display: block;
+        }
+	}
 }
 
 
@@ -120,5 +133,18 @@ button,
     .sprite_icon {
         width: 20px;
         height: 20px;
+    }
+}
+
+
+@media (max-width:480px) {
+
+    .compare_button {
+        font-size: 14px;
+        height: 38px;
+    }
+    .button {
+        font-size: 14px;
+        padding: 10px 10px;
     }
 }

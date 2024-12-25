@@ -8,8 +8,22 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function search(Request $request) {
+        $search_str = $request->input('q');
+        $search_result = Product::where('name', 'LIKE', "%".$search_str."%")
+        ->orWhere('brand', 'LIKE', "%".$search_str."%")
+        ->orWhere('series', 'LIKE', "%".$search_str."%")
+        ->paginate(20)
+        ->withQueryString();
+
+        return view('product.search',[
+            'products' => $search_result,
+            'q' => $search_str
+        ]);
+    }
+
     public function index() {
-        return view('wiki.index');
+        return view('product.index');
     }
 
     public function product_cat() {
