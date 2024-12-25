@@ -24,4 +24,8 @@ class LoadetData extends Model
         'price',
         'shop'
     ];
+
+    public function shop_data() {
+        return $this->hasOne(Shop::class, "name", "shop");
+    }
 }

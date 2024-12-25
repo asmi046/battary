@@ -20,11 +20,22 @@ class ProductController extends Controller
         $product = Product::where('slug', $slug)->first();
         if(!$product) abort('404');
 
-        $nal = LoadetData::where('sku', $product->sku)->get();
+        $nal = LoadetData::with('shop_data')->where('sku', $product->sku)->where('shop', "!=", "")->orderByRaw("shop") ->get();
+
+        $q_list = [];
+
+        if ($product->clem_location === 1) $q_list = [1, 4];
+        if ($product->clem_location === 0) $q_list = [0, 3];
+
+        $upsale = Product::where("width", ">", $product->width-config('select_range.size_minus'))->Where("width", "<", $product->width+config('select_range.size_plus'))
+            ->where("height", ">", $product->height-config('select_range.size_minus'))->Where("height", "<", $product->height+config('select_range.size_plus'))
+            ->where("length", ">", $product->length-config('select_range.size_minus'))->Where("length", "<", $product->length+config('select_range.size_plus'))
+            ->whereIn("clem_location", $q_list)->get();
 
         return view('product.page', [
             'product' => $product,
             'nal' => $nal,
+            'upsale' => $upsale
         ]);
     }
 }
