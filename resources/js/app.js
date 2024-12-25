@@ -9,6 +9,10 @@ import {createApp} from 'vue/dist/vue.esm-bundler';
 import SelectByCar from "./components/selection/SelectByCar.vue"
 import SelectByParams from "./components/selection/SelectByParams.vue"
 
+import SideMenu from './menues.js';
+
+let side_menue = new SideMenu('#main_side_menue', '.show_menue_button');
+
 const select_app = createApp({
     components:{
         SelectByCar,

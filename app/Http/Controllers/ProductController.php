@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\LoadetData;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -14,7 +16,15 @@ class ProductController extends Controller
         return view('product.cat');
     }
 
-    public function product_page() {
-        return view('product.page');
+    public function product_page($slug) {
+        $product = Product::where('slug', $slug)->first();
+        if(!$product) abort('404');
+
+        $nal = LoadetData::where('sku', $product->sku)->get();
+
+        return view('product.page', [
+            'product' => $product,
+            'nal' => $nal,
+        ]);
     }
 }

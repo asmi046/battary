@@ -17,7 +17,7 @@ if (!function_exists("str_to_hvl")) {
         return [
             "h" => isset($result[2])?$result[2]:0,
             "w" => isset($result[1])?$result[1]:0,
-            "l" => isset($result[0])?$result[0]:0,
+            "l" => isset($result[0])?($result[0] === "")?0:$result[0]:0,
         ];
     }
 }

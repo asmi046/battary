@@ -6,3 +6,12 @@
         width: unset;
     }
 }
+
+@media (max-width:480px) {
+    .about-in-main {
+        .container .about_text_in_main {
+            padding: 20px;
+            font-size: 12px;
+        }
+    }
+}

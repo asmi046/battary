@@ -3,11 +3,7 @@
     <nav class="side_menue">
         <div class="top_blk">
             <a class="logo" href="{{ route('home') }}">
-                <img src="{{ asset('img/logo.svg') }}" alt="">
-            </a>
-
-            <a href="#" class="circl_btn show_menue_button">
-                <x-burger-icon :active="true"></x-burger-icon>
+                <img src="{{ asset('img/logo-full.svg') }}" alt="">
             </a>
         </div>
 
@@ -18,8 +14,16 @@
         </div>
 
         <div class="bottom_blk">
-            <x-contacts-list></x-contacts-list>
         </div>
     </nav>
+</div>
+
+
+<div class="show_menue_button">
+    <div class="icon-menu toggle_menu" aria-label="Бургер меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </div>
 

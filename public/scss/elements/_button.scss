@@ -109,3 +109,15 @@ button,
         background-color: $yello_color_hover;
     }
 }
+
+
+.icon_button {
+    display: flex;
+    span {
+        margin-right: 10px;
+    }
+    .sprite_icon {
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -6,6 +6,7 @@ use Closure;
 use App\Models\Product;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Builder;
 
 class PopularInMain extends Component
 {
@@ -15,7 +16,10 @@ class PopularInMain extends Component
      */
     public function __construct()
     {
-        $this->popular = Product::where('popular', true)->get();
+        // $this->popular = Product::where('popular', true)->get();
+        $this->popular = Product::where('popular', true)->whereHas('category_tovars', function (Builder $query) {
+            $query->where('name', 'Аккумуляторные батареи');
+        })->get();
     }
 
     /**

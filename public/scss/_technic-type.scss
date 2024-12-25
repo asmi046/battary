@@ -77,6 +77,37 @@
         }
 
     }
+}
 
+@media (max-width:1024px) {
+    .technic_type_wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .tt_link {
+            width:45%;
+            flex:unset
+        }
+    }
+}
 
+@media (max-width:480px) {
+    .technic_type_wrapper {
+        .tt_link {
+            width:40%;
+            padding: 10px 10px;
+            .icon {
+                width:60%!important;
+                background-size: contain;
+
+                &._mt {
+                    width:40%!important;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                margin-top: 0;
+            }
+        }
+    }
 }

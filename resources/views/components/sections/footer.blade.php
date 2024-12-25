@@ -12,7 +12,7 @@
 
             <x-menues.puncts  wrap="footer_menu"></x-menues.puncts>
         </div>
-        <div class="col col_menue">
+        <div class="col col_menue col_menue_catalog">
             <p class="fheader">Катклог</p>
             <x-menues.puncts name="Каталог" wrap="footer_menu"></x-menues.puncts>
         </div>

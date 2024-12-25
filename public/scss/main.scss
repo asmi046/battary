@@ -11,6 +11,13 @@
 body{
     font-family: $main_fonts;
     font-size: 16px;
+
+
+    main {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
 }
 
 .th,
@@ -112,6 +119,22 @@ swiper-container {
     }
 }
 
+@media (max-width:768px) {
+    .section_h2 {
+        font-size: 22px;
+
+        br {
+            display: none;
+        }
+    }
+}
+
+@media (max-width:480px) {
+    .logo {
+        width: 100%;
+    }
+}
+
 @import "form/all-form";
 @import "elements/all-elements";
 @import "icon-a";
@@ -126,6 +149,7 @@ swiper-container {
 @import "util";
 @import "about";
 @import "product";
+@import "404";
 
 @import "burger-icon";
 @import "footer";

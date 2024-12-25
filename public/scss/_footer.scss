@@ -1,6 +1,7 @@
 footer {
     background-color: $blue_color;
     color:white;
+    margin-top: auto;
     .container {
         display: flex;
         justify-content: space-between;
@@ -22,9 +23,6 @@ footer {
         }
 
         .col_logo {
-            .logo {
-                margin: 0 auto auto auto;
-            }
 
             .social {
                 margin-left: 0;
@@ -37,6 +35,30 @@ footer {
                 }
             }
 
+        }
+    }
+}
+
+
+@media (max-width:1024px) {
+    footer .container .col.col_menue_catalog {
+        display: none;
+    }
+}
+
+
+@media (max-width:480px) {
+    footer .container {
+        flex-direction: column;
+
+        .logo,
+        .copyright,
+        .social {
+            margin-bottom: 20px;
+        }
+
+        .col_contact {
+            margin-top: 20px;
         }
     }
 }

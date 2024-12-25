@@ -27,3 +27,23 @@
         }
     }
 }
+
+@media (max-width:480px) {
+    .util_wrapper .info {
+        h2 {
+            font-size: 22px;
+        }
+
+        p {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+    }
+}
+
+
+@media (max-width:768px) {
+    .util_wrapper {
+        flex-direction: column;
+    }
+}

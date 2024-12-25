@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->boolean('show')->default(false)->comment("Показывать товар");
             $table->string('name', 500)->comment("Наименование товара");
+            $table->string('sku', 500)->comment("Артикул");
+            $table->string('brand', 200)->nullable()->comment("Бренд АКБ");
+            $table->string('series', 200)->nullable()->comment("Серия бренда АКБ");
             $table->string('slug', 700)->unique()->comment("Ссылка");
             $table->string('img', 700)->nullable()->comment("Изображение");
             $table->float('old_price', 8, 2)->nullable()->comment("Старая Цена");

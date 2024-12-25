@@ -29,6 +29,7 @@
 </head>
 <body>
     @include("allicon")
+    <x-menues.side-menu></x-menues.side-menu>
     <main id="main">
         <x-sections.header></x-sections.header>
         <x-sections.header-control></x-sections.header-control>
