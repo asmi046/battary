@@ -4,7 +4,9 @@
             <a class="logo" href="{{ route('home') }}">
                 <img src="{{ asset('img/logo-full.svg')}}" alt="{{ config('asmiseo.title_postfix')}}">
             </a>
-            <x-social :pros="true"></x-social>
+
+            <x-contacts.social-button pros="1"></x-contacts.social-button>
+
             <p class="copyright">© Все права защищены</p>
         </div>
         <div class="col col_menue">

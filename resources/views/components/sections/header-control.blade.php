@@ -16,7 +16,7 @@
             <div class="control">
                 {{-- <a href="#" class="button button-yellow">Сравнить</a> --}}
                 <x-icon-button ancor="Сравнить" icon="compare_icon" class="button button-yellow" ></x-icon-button>
-                <x-social></x-social>
+                <x-contacts.social-button></x-contacts.social-button>
             </div>
         </div>
 

@@ -49,7 +49,7 @@ class ContactSeeder extends Seeder
             [
                 'name' => "Координаты",
                 'key' => "geo",
-                'value' => "",
+                'value' => "51.71000023325106,36.15133716931145",
             ],
 
             [
@@ -67,7 +67,7 @@ class ContactSeeder extends Seeder
             [
                 'name' => "Ссылка на WhatsApp",
                 'key' => "ws",
-                'value' => "#",
+                'value' => "",
             ],
 
             [
