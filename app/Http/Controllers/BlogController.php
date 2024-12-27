@@ -19,16 +19,28 @@ class BlogController extends Controller
         ]);
     }
 
-    public function wiki_cat() {
-        return view('wiki.cat');
+    public function wiki_cat($slug) {
+
+        $curent_cat = BlogCategory::with('posts')->where('slug', $slug)->first();
+        $all_post_cat = BlogCategory::all();
+        // dd($curent_cat);
+        if(!$curent_cat) abort('404');
+
+        return view('wiki.cat', [
+            'curent' => $curent_cat,
+            'cats' => $all_post_cat,
+        ]);
     }
 
     public function wiki_page($slug) {
         $post = Blog::where('slug', $slug)->first();
+
+
         if(!$post) abort('404');
 
         return view('wiki.page', [
-            'post' => $post
+            'post' => $post,
+
         ]);
     }
 }

@@ -19,15 +19,14 @@
 
 <section class="wiki_section">
     <div class="container">
-        <div class="wiki_cat">
-            @foreach ($cats as $item)
-                <a href="{{ route('wiki_cat', $item->slug) }}" class="wiki_cat_element">{{ $item->title }}</a>
-            @endforeach
-        </div>
+        <x-wiki.cat-control :cats="$cats" curentname="Все"></x-wiki.cat-control>
+
         <div class="wiki_post_wrapper">
             @foreach ($posts as $item)
                 <x-cards.wiki-card :item="$item"></x-cards.wiki-card>
             @endforeach
+
+            <x-pagination :tovars="$posts"></x-pagination>
         </div>
     </div>
 </section>

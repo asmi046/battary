@@ -16,7 +16,7 @@ class MenuSeeder extends Seeder
         DB::table("menus")->insert(
             [
                 [
-                    'lnk' => "#",
+                    'lnk' => "/about",
                     'order' => 1,
                     'title' => "О нас",
                 ],
@@ -27,19 +27,19 @@ class MenuSeeder extends Seeder
                 ],
 
                 [
-                    'lnk' => "#",
+                    'lnk' => "/shops",
                     'order' => 3,
                     'title' => "Адреса магазинов",
                 ],
 
                 [
-                    'lnk' => "#",
+                    'lnk' => "/wiki",
                     'order' => 4,
                     'title' => "База знаний",
                 ],
 
                 [
-                    'lnk' => "#",
+                    'lnk' => "/contacts",
                     'order' => 5,
                     'title' => "Контакты",
                 ],

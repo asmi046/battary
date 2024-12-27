@@ -4,6 +4,13 @@
         margin: 20px 0;
     }
 
+    a{
+        color:$blue_color;
+        &:hover {
+           text-decoration: underline;
+        }
+    }
+
     ul li {
         margin: 10px 0;
         position: relative;

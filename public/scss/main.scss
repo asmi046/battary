@@ -129,6 +129,7 @@ swiper-container {
     }
 }
 
+
 @media (max-width:1440px) {
     .container {
         width: 96%;
@@ -138,6 +139,9 @@ swiper-container {
 }
 
 @media (max-width:768px) {
+    .bg_h1_page {
+        font-size: 26px;
+    }
     .section_h2 {
         font-size: 22px;
 
@@ -169,6 +173,8 @@ swiper-container {
 @import "product";
 @import "404";
 @import "wiki";
+@import "column";
+@import "contacts_page";
 
 @import "burger-icon";
 @import "footer";

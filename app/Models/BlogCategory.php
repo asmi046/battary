@@ -12,7 +12,7 @@ class BlogCategory extends Model
         'description',
     ];
 
-    public function pages() {
+    public function posts() {
         return $this->belongsToMany(Blog::class);
     }
 

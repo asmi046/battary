@@ -1,0 +1,22 @@
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &.columns_2 {
+        .column {
+            width:48%;
+        }    
+    }
+}
+
+@media (max-width: 768px) { 
+    .columns { 
+        flex-direction: column-reverse;
+        &.columns_2 {
+            .column {
+                width:100%;
+            }    
+        }
+    }
+}
