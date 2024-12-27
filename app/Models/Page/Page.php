@@ -17,13 +17,15 @@ class Page extends Model
         'slug',
         'img',
         'description',
-        'seo_title',
-        'seo_description',
+        'galery',
+        'params',
     ];
 
-    protected $allowedSorts = [
-        'title',
+    public $casts = [
+        'galery' => "Array",
+        'params' => "Array"
     ];
+
 
     public function setSlugAttribute($value)
     {

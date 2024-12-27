@@ -19,12 +19,12 @@ class ProductSeeder extends Seeder
     {
         $files = [
             'zar_ustr.json',
-            'site_akb.json',
             'shetki.json',
             'priobr_napr.json',
             'element_pit.json',
             'aksesuares.json',
             'akb_tester.json',
+            'site_akb.json',
         ];
 
         $categories = [

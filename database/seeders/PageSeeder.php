@@ -18,6 +18,9 @@ class PageSeeder extends Seeder
     public function run(): void
     {
 
+        Storage::disk('public')->put('pages/assortiment.jpg', file_get_contents(public_path('site_data//about_img//assortiment.jpg')), 'public');
+        Storage::disk('public')->put('pages/shop.jpg', file_get_contents(public_path('site_data//about_img//shop.jpg')), 'public');
+
         $data = [
             [
                 'title' => 'Политика конфиденциальности',
@@ -29,6 +32,74 @@ class PageSeeder extends Seeder
                 'title' => 'О нас',
                 'slug' => Str::slug("О нас"),
                 'description' => file_get_contents(public_path('page_text//about.html')),
+
+                'galery' => json_encode([
+                    [
+                        'title' => 'Центральный магазин',
+                        'img' => 'pages/shop.jpg',
+                    ],
+                    [
+                        'title' => 'Ассортимент продукции',
+                        'img' => 'pages/assortiment.jpg',
+                    ],
+                ]),
+
+                'params' => json_encode([
+                    [
+                        'cat' => "Цифры",
+                        'title' => 'Лет на рынке',
+                        'value' => '15 +',
+                    ],
+                    [
+                        'cat' => "Цифры",
+                        'title' => 'Магазинов',
+                        'value' => '20 +',
+                    ],
+                    [
+                        'cat' => "Цифры",
+                        'title' => 'Брендов АКБ',
+                        'value' => '12 +',
+                    ],
+
+                    [
+                        'cat' => "adv",
+                        'title' => 'Широкий ассортимент и наличие',
+                        'value' => 'adv_assortiment',
+                    ],
+
+                    [
+                        'cat' => "adv",
+                        'title' => 'Гарантия качества',
+                        'value' => 'adv_garant',
+                    ],
+
+                    [
+                        'cat' => "adv",
+                        'title' => 'Выгоднфе цены',
+                        'value' => 'adv_price',
+                    ],
+
+                    [
+                        'cat' => "adv",
+                        'title' => 'Ориентированность на клиента',
+                        'value' => 'adv_client',
+                    ],
+
+                    [
+                        'cat' => "adv",
+                        'title' => 'Актуальная продукция',
+                        'value' => 'adv_actual',
+                    ],
+
+                    [
+                        'cat' => "adv",
+                        'title' => 'Профессиональные консультации',
+                        'value' => 'adv_consult',
+                    ],
+
+                ]),
+
+
             ],
         ];
 

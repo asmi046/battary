@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use App\Models\LoadetData;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,12 @@ class ProductController extends Controller
     }
 
     public function index() {
-        return view('product.index');
+        $all_cat = Category::where('parentid', 0)->get();
+        $all_product = Product::paginate(15);
+        return view('product.index', [
+            'all_cat' => $all_cat,
+            'all_product' => $all_product,
+        ]);
     }
 
     public function product_cat() {

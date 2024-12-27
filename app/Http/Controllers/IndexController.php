@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Page\Page;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -12,7 +13,13 @@ class IndexController extends Controller
     }
 
     public function about() {
-        return view('about');
+        $page_about = Page::where('title', "О нас")->first();
+
+        if(!$page_about) abort('404');
+
+        return view('about', [
+            'page_about' => $page_about
+        ]);
     }
 
     public function contacts() {

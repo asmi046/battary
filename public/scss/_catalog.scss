@@ -1,0 +1,21 @@
+.catalog_side_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .filter {
+        width:15%;
+        min-width: 300px;
+        margin-right: 2%;
+        min-height: 100px;
+        height: auto;
+    }
+
+    .product_list_wrapper {
+        flex:1;
+
+        .product_card {
+            width:32%;
+        }
+    }
+
+}

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('template')->nullable()->comment('Имя шаблона');
             $table->string('img')->nullable()->comment('Картинка баннера');
             $table->mediumText('description')->nullable()->comment('Текст страницы');
+            $table->json("galery")->nullable()->comment("Галерея");
+            $table->json("params")->nullable()->comment("Параметры");
         });
     }
 
