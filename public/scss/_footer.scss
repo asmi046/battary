@@ -1,3 +1,64 @@
 footer {
-    
+    background-color: $blue_color;
+    color:white;
+    margin-top: auto;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 200;
+        a{
+            color:white;
+
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+
+            .fheader {
+                font-weight: bold;
+                font-size: 26px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .col_logo {
+
+            .social {
+                margin-left: 0;
+                .sprite_icon {
+                    fill:white;
+
+                    .pros {
+                        fill: $blue_color;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+@media (max-width:1024px) {
+    footer .container .col.col_menue_catalog {
+        display: none;
+    }
+}
+
+
+@media (max-width:480px) {
+    footer .container {
+        flex-direction: column;
+
+        .logo,
+        .copyright,
+        .social {
+            margin-bottom: 20px;
+        }
+
+        .col_contact {
+            margin-top: 20px;
+        }
+    }
 }

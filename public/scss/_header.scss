@@ -1,3 +1,119 @@
 header{
-    
+    background-color: $yello_color;
+    padding: 12px 0;
+    border-bottom: 2px solid $main_color;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mobile_top_menu {
+        display: none;
+    }
+}
+
+
+.control_section {
+   .container {
+        .element_wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            .search_form {
+                flex: 1;
+                max-height: 40px;
+                margin: auto 0;
+            }
+
+            .button {
+                margin: auto 0;
+                height: 18px;
+                line-height: 18px;
+            }
+
+            .control {
+                display: flex;
+            }
+        }
+   }
+}
+
+.search_form {
+    display: flex;
+    border: 1px solid $gray_border_color;
+    border-radius: $border_rad_big;
+    background-color: $gray_bg_color;
+    overflow: hidden;
+
+    input {
+        border:none;
+        background-color: unset;
+        height: 100%;
+        height: unset;
+    }
+
+    button {
+        background-color: unset;
+        border: none;
+        width: 20px;
+        height: 20px;
+        margin: auto 0;
+        padding: 10px 20px;
+        .sprite_icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &.mobil_search_form{
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    header {
+        padding: 5px 0;
+        .top_menu {
+            display: none;
+        }
+        .mobile_top_menu {
+            display: flex;
+        }
+    }
+
+    .control_section {
+        .container {
+            .element_wrapper {
+                justify-content: space-between;
+                .search_form {
+                    display: none;
+                }
+            }
+
+            .search_form.mobil_search_form{
+                display: flex;
+                margin-top: 20px;
+            }
+
+        }
+    }
+}
+
+@media (max-width:480px) {
+    .control_section {
+        .container {
+            .element_wrapper {
+                .control {
+                    display: none;
+                }
+            }
+
+            .search_form.mobil_search_form{
+                margin-top: 10px;
+            }
+
+        }
+    }
 }

@@ -1,0 +1,113 @@
+.technic_type_wrapper {
+    display: flex;
+    gap:20px;
+
+    margin-top: 40px;
+
+    .tt_link {
+        display: flex;
+        flex-direction: column;
+        background-color: $gray_bg_color;
+        flex:1;
+        border-radius: $border_rad;
+        text-align: center;
+        padding: 30px 10px;
+
+        p {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 30px;
+        }
+
+        .icon {
+            margin: auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+
+            &._la {
+                width:162px;
+                height:82px;
+                background-image: url(../img/technic_type/_la_y.svg);
+            }
+
+
+            &._ga {
+                width:167px;
+                height:118px;
+                background-image: url(../img/technic_type/_ga_y.svg);
+            }
+
+
+            &._mt {
+                width:94px;
+                height:82px;
+                background-image: url(../img/technic_type/_mt_y.svg);
+            }
+
+
+            &._st {
+                width:211px;
+                height:117px;
+                background-image: url(../img/technic_type/_st_y.svg);
+            }
+
+        }
+
+        &:hover {
+            background-color: $yello_color;
+
+            & ._st {
+                background-image: url(../img/technic_type/_st_w.svg);
+            }
+
+            & ._mt {
+                background-image: url(../img/technic_type/_mt_w.svg);
+            }
+
+            & ._ga {
+                background-image: url(../img/technic_type/_ga_w.svg);
+            }
+
+            & ._la {
+                background-image: url(../img/technic_type/_la_w.svg);
+            }
+        }
+
+    }
+}
+
+@media (max-width:1024px) {
+    .technic_type_wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .tt_link {
+            width:45%;
+            flex:unset
+        }
+    }
+}
+
+@media (max-width:480px) {
+    .technic_type_wrapper {
+        .tt_link {
+            width:40%;
+            padding: 10px 10px;
+            .icon {
+                width:60%!important;
+                background-size: contain;
+
+                &._mt {
+                    width:40%!important;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                margin-top: 0;
+            }
+        }
+    }
+}

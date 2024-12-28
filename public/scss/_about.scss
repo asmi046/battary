@@ -1,0 +1,40 @@
+.about-in-main {
+    .container .about_text_in_main {
+        background-color: $gray_bg_color;
+        padding: 40px;
+        border-radius: $border_rad;
+        width: unset;
+    }
+}
+
+.about_page_section {
+    .digit_line {
+        background-color: $main_color;
+        color: white;
+    }
+
+    .div .adv_line {
+        display: flex;
+    }
+
+    .column.photo {
+        display: flex;
+        flex-direction: column;
+        gap:40px;
+        .img {
+            border-radius: $border_rad;
+            overflow: hidden;
+            border:1px solid $gray_border_color;
+            display: flex;
+        }
+    }
+}
+
+@media (max-width:480px) {
+    .about-in-main {
+        .container .about_text_in_main {
+            padding: 20px;
+            font-size: 12px;
+        }
+    }
+}

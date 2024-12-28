@@ -2,6 +2,7 @@
 @import "label";
 @import "field";
 @import "search_input";
+@import "range_param";
 
 
 form {
@@ -10,6 +11,6 @@ form {
     }
 
     header{
-        background-color: unset;  
+        background-color: unset;
     }
 }

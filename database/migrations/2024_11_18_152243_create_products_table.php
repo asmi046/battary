@@ -14,9 +14,14 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->boolean('show')->default(false)->comment("Показывать товар");
             $table->string('name', 500)->comment("Наименование товара");
+            $table->string('sku', 500)->comment("Артикул");
+            $table->string('brand', 200)->nullable()->comment("Бренд АКБ");
+            $table->string('series', 200)->nullable()->comment("Серия бренда АКБ");
             $table->string('slug', 700)->unique()->comment("Ссылка");
             $table->string('img', 700)->nullable()->comment("Изображение");
+            $table->float('old_price', 8, 2)->nullable()->comment("Старая Цена");
             $table->float('price', 8, 2)->comment("Цена");
             $table->integer('amperage')->nullable()->comment('Ток (EN)');
             $table->float('height', 6, 2)->nullable()->comment('Высота');
@@ -25,6 +30,7 @@ return new class extends Migration
             $table->float('volume', 6, 2)->nullable()->comment('Емкость');
             $table->integer('clem_location')->nullable()->nullable()->comment('Расположение клемм');
             $table->integer('voltage')->nullable()->comment('Вольтаж');
+            $table->boolean('popular')->defaulr(false)->comment('Популярный товар');
             $table->string('type', 70)->nullable()->comment('Тип');
             $table->json('galery')->nullable()->comment('Галерея изображений');
 

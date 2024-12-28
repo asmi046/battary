@@ -52,10 +52,10 @@ class ProductFilter extends QueryFilter {
         if ($order == "Сначала дешевые")
             $this->builder->orderBy('price', "ASC");
 
-        if ($order == "Сначала большей екмкости")
+        if ($order == "Сначала большей ёмкости")
             $this->builder->orderBy('volume', "DESC");
 
-        if ($order == "Сначала меньшей екмкости")
+        if ($order == "Сначала меньшей ёмкости")
             $this->builder->orderBy('volume', "ASC");
 
     }

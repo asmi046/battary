@@ -1,0 +1,17 @@
+.section_404 {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        text-align: center;
+        h1 {
+            font-size: 94px;
+            color: $blue_color;
+        }
+
+        .button {
+            max-width: 280px;
+            margin: 0 auto;
+        }
+    }
+}
