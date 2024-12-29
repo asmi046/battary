@@ -8,7 +8,23 @@
     "packages": [
         {
             "name": "asmi046/site_skelet",
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "version": "1.0.30",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/asmi046/site_skelet.git",
+                "reference": "1aa852f581bc6da0dcefb9b472d1ef8037ddffeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/asmi046/site_skelet/zipball/1aa852f581bc6da0dcefb9b472d1ef8037ddffeb",
+                "reference": "1aa852f581bc6da0dcefb9b472d1ef8037ddffeb",
+=======
+            "version": "1.0.31",
+=======
             "version": "1.0.32",
+>>>>>>> bab075f242e6525411e3e812f31ef5df52f22314
             "source": {
                 "type": "git",
                 "url": "https://github.com/asmi046/site_skelet.git",
@@ -16,8 +32,14 @@
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
+                "url": "https://api.github.com/repos/asmi046/site_skelet/zipball/e795b2845cd8df6b69b442f43f3b0df363f897cc",
+                "reference": "e795b2845cd8df6b69b442f43f3b0df363f897cc",
+>>>>>>> 010d7f520174a1cece8bcab1eb45aa22569f215f
+=======
                 "url": "https://api.github.com/repos/asmi046/site_skelet/zipball/1b2d782eb5d9f204ce0571ab96d21d2df0bb3624",
                 "reference": "1b2d782eb5d9f204ce0571ab96d21d2df0bb3624",
+>>>>>>> bab075f242e6525411e3e812f31ef5df52f22314
                 "shasum": ""
             },
             "require": {
@@ -48,9 +70,21 @@
             ],
             "support": {
                 "issues": "https://github.com/asmi046/site_skelet/issues",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                "source": "https://github.com/asmi046/site_skelet/tree/1.0.30"
+            },
+            "time": "2024-10-27T00:12:49+00:00"
+=======
+                "source": "https://github.com/asmi046/site_skelet/tree/1.0.31"
+            },
+            "time": "2024-12-04T09:04:52+00:00"
+>>>>>>> 010d7f520174a1cece8bcab1eb45aa22569f215f
+=======
                 "source": "https://github.com/asmi046/site_skelet/tree/1.0.32"
             },
             "time": "2024-12-19T17:52:46+00:00"
+>>>>>>> bab075f242e6525411e3e812f31ef5df52f22314
         },
         {
             "name": "brick/math",
@@ -9024,5 +9058,5 @@
         "php": "^8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
