@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\LoadetData;
 use Illuminate\Http\Request;
+use App\Filters\ProductFilterCatalog;
 
 class ProductController extends Controller
 {
@@ -23,9 +24,9 @@ class ProductController extends Controller
         ]);
     }
 
-    public function index() {
+    public function index(ProductFilterCatalog $request) {
         $all_cat = Category::where('parentid', 0)->get();
-        $all_product = Product::paginate(15);
+        $all_product = Product::select()->filter($request)->paginate(15)->withQueryString();
         return view('product.index', [
             'all_cat' => $all_cat,
             'all_product' => $all_product,

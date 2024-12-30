@@ -18,13 +18,13 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         $files = [
+            'site_akb.json',
             'zar_ustr.json',
             'shetki.json',
             'priobr_napr.json',
             'element_pit.json',
             'aksesuares.json',
             'akb_tester.json',
-            'site_akb.json',
         ];
 
         $categories = [

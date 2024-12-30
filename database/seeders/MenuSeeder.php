@@ -21,7 +21,7 @@ class MenuSeeder extends Seeder
                     'title' => "О нас",
                 ],
                 [
-                    'lnk' => "#",
+                    'lnk' => "/catalog",
                     'order' => 2,
                     'title' => "Каталог продкуции",
                 ],

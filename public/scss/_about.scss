@@ -10,11 +10,48 @@
 .about_page_section {
     .digit_line {
         background-color: $main_color;
+        display: flex;
+        justify-content: space-between;
         color: white;
+        border-radius: $border_rad;
+        gap:40px;
+        padding: 15px 150px;
+        text-transform: uppercase;
+        line-height: 1.2;
+        span {
+            font-size: 38px;
+        }
     }
 
-    .div .adv_line {
+    .adv_wrapper {
         display: flex;
+        flex-wrap: wrap;
+        row-gap: 40px;
+        .adv_blk {
+            flex:1 1 32%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 500;
+
+            .icon_wrapper {
+                margin: auto;
+                width:180px;
+                height: 180px;
+                border-radius: 180px;
+                background-color: $gray_bg_color;
+                margin-bottom: 20px;
+                display: flex;
+
+                .sprite_icon {
+                    margin: auto;
+                    height: 66px;
+                }
+            }
+        }
+
     }
 
     .column.photo {
@@ -35,6 +72,67 @@
         .container .about_text_in_main {
             padding: 20px;
             font-size: 12px;
+        }
+    }
+}
+
+
+
+@media (max-width:768px) {
+    .about_page_section {
+        .columns {
+            flex-direction: column;
+        }
+
+        .digit_line {
+            margin-top: 20px;
+            padding: 15px 50px;
+        }
+
+        .adv_wrapper {
+            .adv_blk {
+                flex: 1 1 48%;
+            }
+        }
+    }
+}
+
+@media (max-width:480px) {
+    .about_page_section {
+
+        .digit_line {
+            padding: 15px 15px;
+            gap: 40px;
+            font-size: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+            .didgit {
+                width:40%
+                span {
+                    font-size: 22px;
+                }
+            }
+
+
+
+        }
+
+        .adv_wrapper {
+            flex-direction: column;
+            .adv_blk {
+                font-size: 14px;
+                flex-direction: row;
+                text-align: left;
+                .icon_wrapper {
+                    width:100px;
+                    height:100px;
+                    margin: 0 20px 0 0;
+                }
+
+                p {
+                    margin: auto 0;
+                }
+            }
         }
     }
 }

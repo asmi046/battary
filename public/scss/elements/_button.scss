@@ -12,6 +12,7 @@ button,
     font-size: 16px;
     text-align: center;
     border-radius: $border_rad_big;
+    line-height: normal;
     &:hover {
         background-color: $hover_color;
     }
@@ -49,14 +50,14 @@ button,
     }
 }
 
-.button-white {
+.button-border {
     background-color: white;
-    border-color: white;
-    color: $black_color;
+    border-color: $main_color;
+    color: $main_color;
     &:hover {
-        background-color: $yello_color;
-        border-color: $yello_color;
-        color: $black_color;
+        background-color: $main_color;
+        border-color: $main_color;
+        color: white;
     }
 }
 
@@ -114,9 +115,6 @@ button,
     }
 
     @media (max-width:480px) {
-        .compare_button {
-
-        }
 		span {
             display: block;
         }

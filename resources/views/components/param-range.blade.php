@@ -4,7 +4,7 @@
 <div class="range_param">
     <div class="side from">
         <label for="{{$name}}_param_from">От</label>
-        <input type="number" id="{{$name}}_param_from" name="{{$name}}_from" value="{{ $_REQUEST[$name.'_to'] ?? 0 }}">
+        <input type="number" id="{{$name}}_param_from" name="{{$name}}_from" value="{{ $_REQUEST[$name.'_from'] ?? 0 }}">
     </div>
 
     <div class="side to">
