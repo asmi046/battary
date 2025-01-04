@@ -1,7 +1,8 @@
 <header>
     <div class="container">
-        <div class="geo">
-            <x-icon-a class="search_lnk" href="#" ancor="Регион" icon="map_pin_icon"></x-icon-a>
+        <div id="region_select" class="geo">
+            <region-select></region-select>
+            {{-- <x-icon-a class="search_lnk" href="#" ancor="Регион" icon="map_pin_icon"></x-icon-a> --}}
         </div>
 
         <div class="menue_side">

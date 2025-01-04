@@ -10,6 +10,8 @@ import SelectByCar from "./components/selection/SelectByCar.vue"
 import SelectByParams from "./components/selection/SelectByParams.vue"
 import Tap from "./components/Tap.vue"
 import FilterOpen from "./components/FilterOpen.vue"
+import ShopMap from "./components/ShopMap.vue"
+import RegionSelect from "./components/RegionSelect.vue"
 
 import SideMenu from './menues.js';
 
@@ -49,6 +51,28 @@ if (document.getElementById("filter_app")) {
 
     filter_app.use(VueAxios, axios)
     filter_app.mount("#filter_app")
+}
+
+if (document.getElementById("shops_app")) {
+    const shops_app = createApp({
+        components:{
+            ShopMap
+        },
+    })
+
+    shops_app.use(VueAxios, axios)
+    shops_app.mount("#shops_app")
+}
+
+if (document.getElementById("region_select")) {
+    const region_select = createApp({
+        components:{
+            RegionSelect
+        },
+    })
+
+    region_select.use(VueAxios, axios)
+    region_select.mount("#region_select")
 }
 
 
