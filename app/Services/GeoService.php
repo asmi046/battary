@@ -21,7 +21,7 @@ class GeoService {
         $response = Http::get(config('geo.adr'),[
             'api_key' => config('geo.key'),
             'ip_address' => $ip,
-            'fields' => $this->$fields
+            'fields' => $this->fields
         ]);
 
         dd($response);
