@@ -23,5 +23,7 @@ class GeoService {
             'ip_address' => $ip,
             'fields' => $this->$fields
         ]);
+
+        dd($response);
     }
 }
