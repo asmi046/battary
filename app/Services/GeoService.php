@@ -24,6 +24,6 @@ class GeoService {
             'fields' => $this->fields
         ]);
 
-        dd($response);
+        dd($response->body());
     }
 }
