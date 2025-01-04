@@ -13,7 +13,7 @@ class GeoService {
 
     protected string $fields = 'city,region,country,ip_address';
 
-    public function get_geo_data(string $id = "127.0.0.1") {
+    public function get_geo_data(string $ip = "127.0.0.1") {
 
         if (!config('geo.adr') || $ip === "127.0.0.1")
             return $this->response;
