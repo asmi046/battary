@@ -15,7 +15,7 @@ class GeoService {
 
     public function get_geo_data(string $id = "127.0.0.1") {
 
-        if (!config('geo.adr') || !$ip || $ip === "127.0.0.1")
+        if (!config('geo.adr') || $ip === "127.0.0.1")
             return $this->response;
 
         $response = Http::get(config('geo.adr'),[
