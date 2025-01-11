@@ -77,6 +77,7 @@ header{
         padding: 5px 0;
         .top_menu {
             display: none;
+            font-size: 12px;
         }
         .mobile_top_menu {
             display: flex;
@@ -102,6 +103,28 @@ header{
 }
 
 @media (max-width:480px) {
+
+    header {
+        a {
+            font-size: 12px;
+        }
+
+        .top_menu {
+            height: 100%;
+            li {
+                display: flex;
+                a{
+                    margin: auto 0;
+                }
+            }
+        }
+
+        .sprite_icon {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
     .control_section {
         .container {
             .element_wrapper {

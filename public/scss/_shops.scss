@@ -1,10 +1,39 @@
 
 .map_side {
     display: flex;
+    flex-direction: column;
+}
+
+.history {
+    display: flex;
+    gap:20px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    .sprite_icon {
+        width: 24px;
+        height: 36px;
+    }
+
+    span {
+        margin: auto 0;
+    }
+
 }
 
 .map_component {
     width: 100%;
     min-height: 300px;
     margin: auto;
+    border-radius: $border_rad;
+    overflow: hidden;
+    border:1px solid $gray_border_color;
+}
+
+
+.shop_select_form {
+    display: flex;
+    gap:20px;
+    select {
+        flex:1
+    }
 }

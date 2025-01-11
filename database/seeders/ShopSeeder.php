@@ -39,7 +39,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "",
                 'img' => "kursk_50let.jpg",
                 'phone' => "+7(4712)52-55-95",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -75,7 +75,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "Пн - Пт - с 09-00 до 19-00; Сб с 9-00 до 17-00; Вс - выходной",
                 'img' => "kursk_malyh.jpg",
                 'phone' => "+7(4712)50-31-04",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -99,7 +99,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "",
                 'img' => "kursk_rilsk.jpg",
                 'phone' => "+7(951)089-36-46",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -111,7 +111,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "",
                 'img' => "",
                 'phone' => "+7(904)522-86-63",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -135,7 +135,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "Пн - Пт 10:00-18:00 Сб -Вс 10:00-17:00",
                 'img' => "kursk_sumskaya.jpg",
                 'phone' => "+7(4712)220-540",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -159,7 +159,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "",
                 'img' => "belgorod_korochanskaya.jpg",
                 'phone' => "+7(4722)21-34-12, моб. +7(920)585-55-55",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -183,7 +183,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "",
                 'img' => "belgorod_borisovka.jpg",
                 'phone' => "+7(961)175-45-55",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -195,7 +195,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "",
                 'img' => "bryansk_nahimova.jpg",
                 'phone' => "+7(4832)300-356, +7(920)600-31-31",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -231,7 +231,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "9:00 - 18:00",
                 'img' => "bryansk_pervomayskaya.jpg",
                 'phone' => "+7(920)603-68-40",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -255,7 +255,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "",
                 'img' => "voronesh_ovseeko.jpg",
                 'phone' => "+7(4732)20-46-99",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -291,7 +291,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "",
                 'img' => "orel_livni.jpg",
                 'phone' => "+7(953)470-65-24",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -327,7 +327,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "Пн - Пт 10:00 - 19:00; Сб 10:00 - 15:00",
                 'img' => "smolensk_eremenko.jpg",
                 'phone' => "+7(910)785-02-17",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -339,7 +339,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "Пн - Пт 09:00 - 18:00; Сб 10:00 - 14:00",
                 'img' => "smolensk_novomoskovskaya.jpg",
                 'phone' => "+7(999)609-00-90",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [
@@ -399,7 +399,7 @@ class ShopSeeder extends Seeder
                 'time_work' => "Пн-Сб 09:00-17:45, Вс - выходной",
                 'img' => "tambov_michurinskaya.jpg",
                 'phone' => "+7(929)019-19-00",
-                'aproved' => true
+                'aproved' => false
             ],
 
             [

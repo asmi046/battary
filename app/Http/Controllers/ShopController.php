@@ -13,7 +13,10 @@ class ShopController extends Controller
 
     public function get_shops(Request $request) {
         $obl = $request->input('obl') ?? "%";
-        $all_shop = Shop::where('obl', 'LIKE', $obl)->get();
+        $apr = $request->input('apr') ?? "%";
+        $all_shop = Shop::where('obl', 'LIKE', $obl)
+            ->where('aproved',  'LIKE', $apr)
+            ->get();
         return $all_shop;
     }
 }
