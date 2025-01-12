@@ -13,6 +13,11 @@ class ProductFilterCatalog extends QueryFilter {
             });
     }
 
+    public function type($type) {
+        if  (!empty($type))
+            $this->builder->whereIn('type', $type);
+    }
+
     public function price_from($price_from) {
         if  (!empty($price_from))
             $this->builder->where("price", ">=", $price_from);

@@ -38,7 +38,7 @@ if (productPageSlider) {
 const popularSlider = document.getElementById("popult_slider");
 if (popularSlider) {
     const popularSliderParam = {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 20,
         breakpoints: {
 

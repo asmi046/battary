@@ -11,7 +11,17 @@
         padding: 0 30px;
         cursor:pointer;
         &.active {
-            background-color: $gray_bg_color;
+            background-color: $yello_color;
+        }
+    }
+}
+
+@media (max-width:768px) {
+
+    .shop_select_form {
+        .shop_selection {
+            justify-content: space-between;
+            gap:10px;
         }
     }
 }

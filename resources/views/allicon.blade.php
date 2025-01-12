@@ -102,6 +102,16 @@
             </defs>
     </symbol>
 
+    <symbol id="apr_empty_icon" viewBox="0 0 25 37">
+        <g clip-path="url(#clip0_808_624)">
+        <path d="M12.19 29.62L24.12 36.34L24.39 36.38V0H0V36.38L0.27 36.34L12.19 29.62Z" fill="#164194"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_808_624">
+        <rect width="24.39" height="36.38" fill="white"/>
+        </clipPath>
+        </defs>
+    </symbol>
 
 
 

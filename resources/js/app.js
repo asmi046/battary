@@ -10,7 +10,7 @@ import SelectByCar from "./components/selection/SelectByCar.vue"
 import SelectByParams from "./components/selection/SelectByParams.vue"
 import Tap from "./components/Tap.vue"
 import FilterOpen from "./components/FilterOpen.vue"
-import ShopMap from "./components/ShopMap.vue"
+import ShopMap from "./components/shop_list/ShopMap.vue"
 import RegionSelect from "./components/region/RegionSelect.vue"
 
 import SideMenu from './menues.js';

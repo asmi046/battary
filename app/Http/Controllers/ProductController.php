@@ -27,9 +27,12 @@ class ProductController extends Controller
     public function index(ProductFilterCatalog $request) {
         $all_cat = Category::where('parentid', 0)->get();
         $all_product = Product::select()->filter($request)->paginate(15)->withQueryString();
+        $all_type = Product::select('type')->groupBy('type')->get();
+
         return view('product.index', [
             'all_cat' => $all_cat,
             'all_product' => $all_product,
+            'all_type' => $all_type,
         ]);
     }
 

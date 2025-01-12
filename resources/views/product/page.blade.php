@@ -12,7 +12,9 @@
                 <div class="slider">
                     <swiper-container init="false" id="product_page_slider">
                         <swiper-slide>
+                            <a data-fslightbox="product_thumb_slider" href="{{Storage::url($product->img)}}">
                                 <img src="{{Storage::url($product->img)}}" alt="{{$product->name}}">
+                            </a>
                         </swiper-slide>
                     </swiper-container>
                     <x-slide.slide-button prefix="product_page_button"></x-slide.slide-button>

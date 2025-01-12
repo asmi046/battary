@@ -25,7 +25,7 @@ class ShopSeeder extends Seeder
                 'adress' => "ул. Моковская, 17",
                 'geo' => "51.70980027557951,36.1507363544921",
                 'time_work' => "Пн.-Пт. 9:00-19:00 , Сб.-Вс. 10:00-16:00",
-                'img' => "kursk_mokovskaya.jpg",
+                'img' => "kursk_mokovskaya.webp",
                 'phone' => "+7(4712)35-44-25",
                 'aproved' => true
             ],
@@ -37,7 +37,7 @@ class ShopSeeder extends Seeder
                 'adress' => "ул. 50 лет Октября, 126",
                 'geo' => "51.76258115370133,36.130402771827704",
                 'time_work' => "",
-                'img' => "kursk_50let.jpg",
+                'img' => "kursk_50let.webp",
                 'phone' => "+7(4712)52-55-95",
                 'aproved' => false
             ],
@@ -49,7 +49,7 @@ class ShopSeeder extends Seeder
                 'adress' => "ул. Радищева, 118, магазин «Стрела»",
                 'geo' => "51.751230, 36.189727",
                 'time_work' => "",
-                'img' => "kursk_strela.jpg",
+                'img' => "kursk_strela.webp",
                 'phone' => "+7(4712)53-45-45",
                 'aproved' => true
             ],
@@ -73,7 +73,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Курск, Малых, 33",
                 'geo' => "51.717831, 36.198495",
                 'time_work' => "Пн - Пт - с 09-00 до 19-00; Сб с 9-00 до 17-00; Вс - выходной",
-                'img' => "kursk_malyh.jpg",
+                'img' => "kursk_malyh.webp",
                 'phone' => "+7(4712)50-31-04",
                 'aproved' => false
             ],
@@ -85,7 +85,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Льгов, 3-й Пятницкий переулок д.1А",
                 'geo' => "51.694284, 35.282734",
                 'time_work' => "",
-                'img' => "kursk_lgov.jpg",
+                'img' => "kursk_lgov.webp",
                 'phone' => "+7(909)239-39-65",
                 'aproved' => true
             ],
@@ -97,7 +97,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Рыльск, Советская площадь 7",
                 'geo' => "51.571946, 34.687879",
                 'time_work' => "",
-                'img' => "kursk_rilsk.jpg",
+                'img' => "kursk_rilsk.webp",
                 'phone' => "+7(951)089-36-46",
                 'aproved' => false
             ],
@@ -133,7 +133,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Курск, г.Курск ул.Сумская 140 'А'",
                 'geo' => "51.712412, 36.125884",
                 'time_work' => "Пн - Пт 10:00-18:00 Сб -Вс 10:00-17:00",
-                'img' => "kursk_sumskaya.jpg",
+                'img' => "kursk_sumskaya.webp",
                 'phone' => "+7(4712)220-540",
                 'aproved' => false
             ],
@@ -145,7 +145,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Курск, Пр-кт Дериглазова 17 Г",
                 'geo' => "51.802703, 36.163505",
                 'time_work' => "C 09 До 19-00 без переывов и выходных",
-                'img' => "kursk_dereglazovo.jpg",
+                'img' => "kursk_dereglazovo.webp",
                 'phone' => "+7(904)523-18-16, +7(906)692-32-31",
                 'aproved' => true
             ],
@@ -157,7 +157,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Белгород, ул. Корочанская, 132 А",
                 'geo' => "50.590376, 36.626362",
                 'time_work' => "",
-                'img' => "belgorod_korochanskaya.jpg",
+                'img' => "belgorod_korochanskaya.webp",
                 'phone' => "+7(4722)21-34-12, моб. +7(920)585-55-55",
                 'aproved' => false
             ],
@@ -168,8 +168,8 @@ class ShopSeeder extends Seeder
                 'city' => "Алексеевка",
                 'adress' => "Белгородская область, г. Алексеевка, ул. Комсомольская, 58 Б",
                 'geo' => "50.629298, 38.661307",
-                'time_work' => "",
-                'img' => "belgorod_korochanskaya.jpg",
+                'time_work' => "belgorod_alekseevka.webp",
+                'img' => "belgorod_korochanskaya.webp",
                 'phone' => "+7(920)203-77-55",
                 'aproved' => true
             ],
@@ -181,7 +181,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Белгородская область, п. Борисовка, ул.Советская 9г",
                 'geo' => "50.605465, 36.010702",
                 'time_work' => "",
-                'img' => "belgorod_borisovka.jpg",
+                'img' => "belgorod_borisovka.webp",
                 'phone' => "+7(961)175-45-55",
                 'aproved' => false
             ],
@@ -193,7 +193,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Брянск, ул. Нахимова д.112 (2 этаж)",
                 'geo' => "53.324363, 34.282487",
                 'time_work' => "",
-                'img' => "bryansk_nahimova.jpg",
+                'img' => "bryansk_nahimova.webp",
                 'phone' => "+7(4832)300-356, +7(920)600-31-31",
                 'aproved' => false
             ],
@@ -205,7 +205,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Брянск, ул. Красный маяк, д.1 (вход с торца здания)",
                 'geo' => "53.263700, 34.417639",
                 'time_work' => "",
-                'img' => "bryansk_mayak.jpg",
+                'img' => "bryansk_mayak.webp",
                 'phone' => "+7(4832)300-365, +7(930)820-03-65",
                 'aproved' => true
             ],
@@ -217,7 +217,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Брянск, ул. Костычева д.72",
                 'geo' => "53.263985, 34.331706",
                 'time_work' => "9:00 - 19:00",
-                'img' => "bryansk_kosticheva.jpg",
+                'img' => "bryansk_kosticheva.webp",
                 'phone' => "+7(920)605-94-13",
                 'aproved' => true
             ],
@@ -229,7 +229,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Брянск, Карачевский р-н, г. Карачев ул. Первомайская д. 6А",
                 'geo' => "53.116681, 34.968441",
                 'time_work' => "9:00 - 18:00",
-                'img' => "bryansk_pervomayskaya.jpg",
+                'img' => "bryansk_pervomayskaya.webp",
                 'phone' => "+7(920)603-68-40",
                 'aproved' => false
             ],
@@ -241,7 +241,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Брянск, ул. Станке Димитрова 45",
                 'geo' => "53.235855, 34.327780",
                 'time_work' => "Пн-Пт. 8:30-19:00, Сб 9:00-18:00, Вс 10:00-17:00",
-                'img' => "bryansk_dimitrova.jpg",
+                'img' => "bryansk_dimitrova.webp",
                 'phone' => "+7(950)690-42-72",
                 'aproved' => true
             ],
@@ -253,7 +253,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Воронеж, ул. Антонова-Овсеенко, 7Б/2",
                 'geo' => "51.696288, 39.130129",
                 'time_work' => "",
-                'img' => "voronesh_ovseeko.jpg",
+                'img' => "voronesh_ovseeko.webp",
                 'phone' => "+7(4732)20-46-99",
                 'aproved' => false
             ],
@@ -277,7 +277,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Воронежская область, г. Острогожск, ул. Кирова 110",
                 'geo' => "50.855881, 39.053772",
                 'time_work' => "",
-                'img' => "voronesh_kirova.jpg",
+                'img' => "voronesh_kirova.webp",
                 'phone' => "+7(952)102-72-29",
                 'aproved' => true
             ],
@@ -289,7 +289,7 @@ class ShopSeeder extends Seeder
                 'adress' => "г. Ливны, ул. Железнодорожная, 14",
                 'geo' => "52.420096, 37.576627",
                 'time_work' => "",
-                'img' => "orel_livni.jpg",
+                'img' => "orel_livni.webp",
                 'phone' => "+7(953)470-65-24",
                 'aproved' => false
             ],
@@ -301,7 +301,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Смоленск, ул.25 сентября д.20",
                 'geo' => "54.766459, 32.068948",
                 'time_work' => "Пн - Пт 09:00-19:00; Сб 10:00-15:00; Вс 10:00-15:00",
-                'img' => "smolensk_25.jpg",
+                'img' => "smolensk_25.webp",
                 'phone' => "+7(953)609-06-89",
                 'aproved' => true
             ],
@@ -313,7 +313,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Рославль, ул.Карла Маркса д.51",
                 'geo' => "53.949572, 32.878636",
                 'time_work' => "Пн - Пт 09:00- 18:00 Сб - Вс 10:00- 16:00",
-                'img' => "smolensk_roslavl`.jpg",
+                'img' => "smolensk_roslavl`.webp",
                 'phone' => "+7(4813)46-57-77, +7(919)046-57-77",
                 'aproved' => true
             ],
@@ -325,7 +325,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Смоленск, Маршала Ерёменко 39 Автобаня Север",
                 'geo' => "54.813469, 32.010854",
                 'time_work' => "Пн - Пт 10:00 - 19:00; Сб 10:00 - 15:00",
-                'img' => "smolensk_eremenko.jpg",
+                'img' => "smolensk_eremenko.webp",
                 'phone' => "+7(910)785-02-17",
                 'aproved' => false
             ],
@@ -337,7 +337,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Смоленск, ул. Ново-Московская д. 23",
                 'geo' => "54.813469, 32.010854",
                 'time_work' => "Пн - Пт 09:00 - 18:00; Сб 10:00 - 14:00",
-                'img' => "smolensk_novomoskovskaya.jpg",
+                'img' => "smolensk_novomoskovskaya.webp",
                 'phone' => "+7(999)609-00-90",
                 'aproved' => false
             ],
@@ -349,7 +349,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Тамбов, ул. Гастелло, 1",
                 'geo' => "52.720455, 41.424336",
                 'time_work' => "Вт.-Вс. 9:00-17:00",
-                'img' => "tambov_gastello.jpg",
+                'img' => "tambov_gastello.webp",
                 'phone' => "+7(915)861-74-41",
                 'aproved' => true
             ],
@@ -361,7 +361,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Тамбов, г.Тамбов, улица Мичуринская 136/3",
                 'geo' => "52.760970, 41.400683",
                 'time_work' => "Ежедневно, 08:00–22:00",
-                'img' => "tambov_michurinkaya.jpg",
+                'img' => "tambov_michurinkaya.webp",
                 'phone' => "+7(4752)49-39-49",
                 'aproved' => true
             ],
@@ -373,7 +373,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Мичуринск, ул.Лаврова дом 16",
                 'geo' => "52.894999, 40.493304",
                 'time_work' => "Вт. - Сб. 9:00 - 17:00, Вс 9:00 - 16:00, Пн - выходной",
-                'img' => "tambov_akkumulyatorniymir.jpg",
+                'img' => "tambov_akkumulyatorniymir.webp",
                 'phone' => "+7(915)678-07-07",
                 'aproved' => true
             ],
@@ -385,7 +385,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Тамбов, г. Тамбов ул. Пролетарская 2 з",
                 'geo' => "52.702026, 41.461598",
                 'time_work' => "Ежедневно, 8-20 Без выходных",
-                'img' => "tambov_proletarskya.jpg",
+                'img' => "tambov_proletarskya.webp",
                 'phone' => "+7(4752)76-01-53",
                 'aproved' => true
             ],
@@ -397,7 +397,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Тамбов, г. Тамбов ул. Мичуринская дом 98",
                 'geo' => "52.744749, 41.424354",
                 'time_work' => "Пн-Сб 09:00-17:45, Вс - выходной",
-                'img' => "tambov_michurinskaya.jpg",
+                'img' => "tambov_michurinskaya.webp",
                 'phone' => "+7(929)019-19-00",
                 'aproved' => false
             ],
@@ -409,7 +409,7 @@ class ShopSeeder extends Seeder
                 'adress' => "Тула, ул. Рязанская, 3 И",
                 'geo' => "54.158182, 37.601762",
                 'time_work' => "",
-                'img' => "tula_battary.jpg",
+                'img' => "tula_battary.webp",
                 'phone' => "+7(4872)70-93-61",
                 'aproved' => true
             ],

@@ -99,6 +99,13 @@
 
 @media (max-width:480px) {
     .about_page_section {
+        font-size: 14px;
+
+        .text_styles  {
+            p:first-child {
+                margin-top: 0;
+            }
+        }
 
         .digit_line {
             padding: 15px 15px;
@@ -133,6 +140,10 @@
                     margin: auto 0;
                 }
             }
+        }
+
+        .about_page_adv_section {
+            margin-top: 20px;
         }
     }
 }

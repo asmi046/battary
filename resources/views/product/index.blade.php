@@ -47,6 +47,13 @@
                             <x-radio-blk id="cleam_2" parametr="clem_location" value="Обратная" valuetext="Обратная"></x-radio-blk>
                         </x-details-main>
 
+                        <x-details-main summary="Назначение">
+                            @foreach ($all_type as $item)
+                                @continue(empty($item->type))
+                                <x-chec-blk id="type{{$loop->index}}" parametr="type" :value="$item->type" :valuetext="$item->type"></x-chec-blk>
+                            @endforeach
+                        </x-details-main>
+
                         <div class="filter_button_wrapper">
                            <button type="submit">Применить фильтр</button>
                            <a href="{{url()->current()}}" class="button button-border">Сбросить фильтр</a>

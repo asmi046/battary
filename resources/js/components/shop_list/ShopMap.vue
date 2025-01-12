@@ -4,17 +4,13 @@
             <form class="shop_select_form" action="">
                 <shop-types v-model="shopType"></shop-types>
                 <select v-model="selectObl">
-                    <option disabled value="%">Все регионы</option>
+                    <option value="%">Все регионы</option>
                     <option v-for="(item, index) in regionList" :key="index" :value="item">{{ item }}</option>
                 </select>
             </form>
 
             <div class="shop_list_wrapper">
-                <div v-for="(item, index) in mainShopList" :key="index" class="shop_card">
-                    <h4>{{ item.name }}</h4>
-                    <p>Адрес: {{ item.adress }}</p>
-                    <p>Телефон: <a :href="'tel:' + item.phone">{{ item.phone }}</a></p>
-                </div>
+                <shop-card @click="go_to_shop(item.geo)" v-for="(item, index) in mainShopList" :key="index" :item="item"></shop-card>
             </div>
 
         </div>
@@ -33,6 +29,7 @@
 <script setup>
     import { ref, watch } from 'vue';
     import ShopTypes from "./ShopTypes.vue"
+    import ShopCard from "./ShopCard.vue"
 
     let shopType = ref("%")
     let regionList = ref([])
@@ -40,23 +37,30 @@
     let myMap = null
     let mainShopList = ref([])
     let startGeo = [52.665894883152205,37.29416945396171];
+    let curentGeo = ref([52.665894883152205,37.29416945396171]);
+    let curentZoom = ref(5);
+
+
     let selectObl = ref(JSON.parse(localStorage.getItem("btRegion"))? JSON.parse(localStorage.getItem("btRegion")).region : '%')
 
 
     watch([shopType, selectObl], () => {
-        console.log("ch!")
         getShops()
     } )
 
     const loadToMap = () => {
         myMap.geoObjects.removeAll()
+
         for(let i =0; i<mainShopList.value.length; i++) {
             let pinAdress = window.asset+"img/map_pin.svg"
             if (mainShopList.value[i].aproved )
                 pinAdress = window.asset+"img/map_pin_apr.svg"
+""
+            const hintValue = '<div class="map_hint"><h4>'+mainShopList.value[i].name+'</h4><p>Адрес: '+mainShopList.value[i].adress+'</p><p>Телефон: '+mainShopList.value[i].phone+'</p></div>'
+
             let pl = new ymaps.Placemark(mainShopList.value[i].geo.split(',') ,{
-                                                hintContent: '<div class="map-hint"></div>',
-                                                balloonContent: '<div class="map-hint"></div>',
+                                                hintContent: '<div class="map-hint">'+hintValue+'</div>',
+                                                balloonContent: '<div class="map-hint">'+hintValue+'</div>',
                                             }
                                             ,{
                                                 iconLayout: 'default#image',
@@ -70,6 +74,25 @@
 
             myMap.geoObjects.add(pl);
        }
+    }
+
+
+    const go_to_shop = (point) => {
+        let toZoom = 12;
+        let toPoint = point.split(',')
+
+        myMap.setCenter([parseFloat(toPoint[0]), parseFloat(toPoint[1])], toZoom)
+    }
+
+    const map_to_point = () => {
+        let toPoint = startGeo;
+        let toZoom = curentZoom.value;
+        if (selectObl.value != "%" && mainShopList.value.length != 0) {
+            toPoint = mainShopList.value[0].geo.split(',')
+            toZoom = 8;
+        }
+
+        myMap.setCenter([parseFloat(toPoint[0]), parseFloat(toPoint[1])], toZoom)
     }
 
     const get_region_list = () => {
@@ -98,6 +121,7 @@
         }).then((response) => {
             mainShopList.value = response.data;
             loadToMap()
+            map_to_point()
         }).catch( (error) => {
             console.log(error)
         });
@@ -106,14 +130,16 @@
     ymaps.ready( () => {
 
 		myMap = new ymaps.Map(map.value, {
-			center: startGeo,
-			zoom: 5,
-			controls: []
+			center: curentGeo.value,
+			zoom: curentZoom.value,
+			controls: ['zoomControl', 'typeSelector']
 		});
 
         loadToMap()
 
     });
+
+
 
     getShops()
     get_region_list()

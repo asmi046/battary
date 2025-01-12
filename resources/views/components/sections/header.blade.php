@@ -10,7 +10,7 @@
 
                 <ul class="mobile_top_menu top_menu">
                     <li>
-                        <a href="#">Адреса магазинов</a>
+                        <a href="{{ route('shops') }}">Адреса магазинов</a>
                     </li>
                 </ul>
         </div>
