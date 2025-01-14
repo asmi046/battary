@@ -1,19 +1,20 @@
 table {
     width: 100%;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
+    border-top: none;
+    border-left: none;
 
     border-spacing: 0;
 
     th,td {
-        border-bottom: 1px solid black;
-        border-right: 1px solid black;
-        padding: 10px 15px;
+        border-bottom: none;
+        border-right: none;
+        padding: 5px 10px;
         text-align: left;
     }
 
     th {
-        background-color: $main_color;
+        background-color: $blue_color_light;
+        padding: 10px 15px;
         color: white;
     }
 

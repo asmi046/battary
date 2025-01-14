@@ -13,9 +13,12 @@
                     </svg>
                 </button>
             </form>
-            <div class="control">
-                {{-- <a href="#" class="button button-yellow">Сравнить</a> --}}
-                <x-icon-button ancor="Сравнить" icon="compare_icon" class="button button-yellow" ></x-icon-button>
+            <div class="control" id="favorites_counter">
+                <x-icon-button href="{{ route('compare') }}" ancor="Сравнить" icon="compare_icon" class="button button-yellow button_compare" >
+                    <div class="favorites_counter">
+                        <favorites-counter></favorites-counter>
+                    </div>
+                </x-icon-button>
                 <x-contacts.social-button></x-contacts.social-button>
             </div>
         </div>

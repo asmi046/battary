@@ -24,4 +24,16 @@
     </div>
 </section>
 
+<section class="wiki_page_more">
+    <div class="container">
+        <h2 class="section_h2">Другие статьи</h2>
+        <div class="wiki_post_wrapper">
+            @foreach ($more_posts as $item)
+                <x-cards.wiki-card :item="$item"></x-cards.wiki-card>
+            @endforeach
+
+        </div>
+    </div>
+</section>
+
 @endsection

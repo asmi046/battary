@@ -10,13 +10,13 @@
         <div class="container">
             <div class="product_page_wrapper">
                 <div class="slider">
-                    <swiper-container init="false" id="product_page_slider">
+                    <product-page-slider>
                         <swiper-slide>
                             <a data-fslightbox="product_thumb_slider" href="{{Storage::url($product->img)}}">
                                 <img src="{{Storage::url($product->img)}}" alt="{{$product->name}}">
                             </a>
                         </swiper-slide>
-                    </swiper-container>
+                    </product-page-slider>
                     <x-slide.slide-button prefix="product_page_button"></x-slide.slide-button>
                 </div>
                 <div id="product_page_app" class="info">

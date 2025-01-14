@@ -113,7 +113,4 @@
         </defs>
     </symbol>
 
-
-
-
   </svg>

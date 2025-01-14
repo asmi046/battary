@@ -1,6 +1,10 @@
 .select_form {
     display: flex;
     gap:20px;
+    background-color: $gray_bg_color;
+    padding: 30px 20px;
+    border-radius: 0 0 $border_rad $border_rad;
+    margin-bottom: 20px;
 
     .field {
         flex:1;
@@ -26,6 +30,13 @@
         gap:20px;
         border-radius: 5px;
 
+        .name {
+            display: flex;
+            h3 {
+                margin: auto auto auto 0;
+            }
+        }
+
         .photo{
             width:100px;
             height: 100px;
@@ -36,6 +47,67 @@
             margin: auto 0;
         }
     }
+
+    .product_card_select {
+        width:unset;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        flex-wrap: wrap;
+        .photo {
+            width: 70px;
+            height: 70px;
+        }
+
+        .name{
+            flex:1;
+        }
+        .price_section {
+            width:90px;
+            display: flex;
+            .price {
+                margin: auto 0;
+            }
+        }
+
+        .params {
+            font-size: 14px;
+        }
+
+        .control {
+            display: flex;
+            .button {
+                margin: auto;
+            }
+        }
+    }
+}
+
+.warning {
+   padding: 10px 30px;
+   background-color: rgba(254, 237, 1, 0.35);
+   border:1px solid rgba(228, 6, 19, 0.3);
+   border-radius: $border_rad;
+   display: inline-flex;
+   font-weight: bold;
+
+   span {
+        padding-left: 50px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left:0;
+            top:calc(50% - 15px);
+            width:36px;
+            height:30px;
+            background: url(../img/warning.svg);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+   }
 }
 
 .control_panel {
@@ -60,7 +132,6 @@
 
 .selection_lnk {
     display: flex;
-    margin: 0 0 40px 0;
 }
 
 
@@ -75,4 +146,26 @@
         gap:10px
     }
 
+    .product_wrapper {
+        .product_card_select {
+            gap:10px;
+        }
+
+
+    }
+}
+
+@media (max-width:375px) {
+    .product_wrapper {
+        .product_card_select {
+            gap:10px;
+            .control {
+                flex:1;
+                display: flex;
+                .button{
+                    width: 100%;
+                }
+            }
+        }
+    }
 }

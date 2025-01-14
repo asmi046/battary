@@ -30,14 +30,18 @@
 </head>
 <body>
     @include("allicon")
-    <x-menues.side-menu></x-menues.side-menu>
-    <main id="main">
+    {{-- <x-menues.side-menu></x-menues.side-menu> --}}
+    <main id="main_app">
+
         <x-sections.header></x-sections.header>
         <x-sections.header-control></x-sections.header-control>
 
         @yield('main')
 
         <x-sections.footer></x-sections.footer>
+        <side-menu>
+            <x-menues.puncts></x-menues.puncts>
+        </side-menu>
     </main>
 </body>
 </html>

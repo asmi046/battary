@@ -37,6 +37,24 @@ header{
                 display: flex;
             }
         }
+
+        .button_compare {
+            position: relative;
+        }
+
+        .favorites_counter {
+            background-color: $main_color;
+            color: white;
+            width:18px;
+            height:18px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 10px;
+            line-height: 19px;
+            position: absolute;
+            right:-5px;
+            top:-3px
+        }
    }
 }
 

@@ -18,11 +18,12 @@
     </p>
     <div class="control_panel">
         <a href="{{ route('product_page', $item['slug']) }}" title="Подробнее" class="button more">Подробнее</a>
-        <a href="#" title="Добавить в сравнение" class="compare_button">
+        <to-favorites-btn sku="{{$item['sku']}}"></to-favorites-btn>
+        {{-- <a href="#" title="Добавить в сравнение" class="compare_button">
             <span>Подобрать</span>
             <svg class="sprite_icon">
                 <use xlink:href="#compare_icon"></use>
             </svg>
-        </a>
+        </a> --}}
     </div>
 </div>

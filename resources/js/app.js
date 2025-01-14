@@ -1,9 +1,14 @@
 import './bootstrap';
 
-import './sliders'
+import { register } from 'swiper/element/bundle';
+register();
+
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+
+import { store } from "./storage"
+import { useStore } from 'vuex'
 
 import {createApp} from 'vue/dist/vue.esm-bundler';
 import SelectByCar from "./components/selection/SelectByCar.vue"
@@ -13,66 +18,47 @@ import FilterOpen from "./components/FilterOpen.vue"
 import ShopMap from "./components/shop_list/ShopMap.vue"
 import RegionSelect from "./components/region/RegionSelect.vue"
 
-import SideMenu from './menues.js';
+import ToFavoritesBtn from "./components/favorites/ToFavoritesBtn.vue"
+import Favorites from "./components/favorites/Favorites.vue"
+import FavoritesCounter from "./components/favorites/FavoritesCounter.vue"
 
-let side_menue = new SideMenu('#main_side_menue', '.show_menue_button');
+import BannerSlider from "./components/sliders/BannerSlider.vue"
+import PopularSlider from "./components/sliders/PopularSlider.vue"
+import ProductPageSlider from "./components/sliders/ProductPageSlider.vue"
+import SideMenu from "./components/SideMenu.vue"
 
-if (document.getElementById("select_app")) {
-    const select_app = createApp({
+// import SideMenu from './menues.js';
+
+// let side_menue = new SideMenu('#main_side_menue', '.show_menue_button');
+
+if (document.getElementById("main_app")) {
+    const main_app = createApp({
         components:{
             SelectByCar,
             SelectByParams,
+            Tap,
+            FilterOpen,
+            ShopMap,
+            RegionSelect,
+            FavoritesCounter,
+            Favorites,
+            BannerSlider,
+            PopularSlider,
+            ProductPageSlider,
+            SideMenu,
+            ToFavoritesBtn
         },
+
+        setup() {
+            const store = useStore()
+            store.dispatch('initialFavorites');
+        }
+
     })
 
-    select_app.use(VueAxios, axios)
-    select_app.mount("#select_app")
+    main_app.use(store)
+    main_app.use(VueAxios, axios)
+    main_app.mount("#main_app")
 
 }
-
-
-if (document.getElementById("product_page_app")) {
-    const product_page_app = createApp({
-        components:{
-            Tap
-        },
-    })
-
-    product_page_app.use(VueAxios, axios)
-    product_page_app.mount("#product_page_app")
-}
-
-if (document.getElementById("filter_app")) {
-    const filter_app = createApp({
-        components:{
-            FilterOpen
-        },
-    })
-
-    filter_app.use(VueAxios, axios)
-    filter_app.mount("#filter_app")
-}
-
-if (document.getElementById("shops_app")) {
-    const shops_app = createApp({
-        components:{
-            ShopMap
-        },
-    })
-
-    shops_app.use(VueAxios, axios)
-    shops_app.mount("#shops_app")
-}
-
-if (document.getElementById("region_select")) {
-    const region_select = createApp({
-        components:{
-            RegionSelect
-        },
-    })
-
-    region_select.use(VueAxios, axios)
-    region_select.mount("#region_select")
-}
-
 

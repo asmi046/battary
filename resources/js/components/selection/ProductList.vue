@@ -15,20 +15,27 @@
             </div>
         </div>
         <div class="product_wrapper">
-            <div v-for="(item, index) in props.productList" :key="index" class="product_card">
+            <div v-for="(item, index) in props.productList" :key="index" class="product_card product_card_select">
                 <div class="photo">
                     <img v-if="item.img != ''" :src="base_path+'/'+item.img" :alt="item.name">
                     <img v-else :src="asset_path+'img/empty-battery.svg'" :alt="item.name">
                 </div>
-                <div class="text">
+                <div class="name">
                     <h3>{{ item.name }}</h3>
-                    <p>
-                        Габариты: <strong>{{ item.length }} / {{ item.width }} / {{ item.height }}</strong>
-                        Ток: <strong>{{ item.amperage }} (EN)</strong>
-                        Ёмкость: <strong>{{ item.volume }} (А/ч)</strong>
-                        Полярность: <strong>{{ clemLocationToStr(item.clem_location) }} </strong>
-                    </p>
+                </div>
+                <div class="params">
+                    <ul>
+                        <li>Габариты: <strong>{{ item.length }} / {{ item.width }} / {{ item.height }}</strong></li>
+                        <li>Ток: <strong>{{ item.amperage }} (EN)</strong></li>
+                        <li>Ёмкость: <strong>{{ item.volume }} (А/ч)</strong></li>
+                        <li>Полярность: <strong>{{ clemLocationToStr(item.clem_location) }} </strong></li>
+                    </ul>
+                </div>
+                <div class="price_section">
                     <p class="price">{{ item.price }}₽</p>
+                </div>
+                <div class="control">
+                    <a target="_blank" :href="'/catalog/product/'+item.slug" class="button">Перейти</a>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <template>
 
-<form class="select_form select_form_by_car" action="">
+<form class="select_form select_form_by_car " action="">
     <select v-model="selectedTsType" name="" id="">
         <option value="">Выберите тип ТС</option>
         <option v-for="(item, index) in tsTypeList" :key="index" :value="item.type">
@@ -23,6 +23,11 @@
 </form>
 
 <div v-show="tsModificationList.length != 0" class="modification">
+
+    <div class="warning select_warning">
+        <span>Ёмкость дается справочно, обязательно сравните размеры вашей и предлагаемых батарей</span>
+    </div>
+
     <h2 class="hm">Модификации</h2>
     <modification-table v-if="showModificationList" v-model="selectedAkbParam" :modifications="tsModificationList"></modification-table>
     <div v-else class="select_modification">

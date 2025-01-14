@@ -30,5 +30,21 @@ class BlogCategorySeeder extends Seeder
             ]
         );
 
+
+        DB::table("seo_data")->insert(
+            [
+                [
+                    'url' => 'wiki/cat/'.Str::slug("Производители"),
+                    'seo_title' => "Полезные материалы по производителям АКБ",
+                    'seo_description' => "Полезные материалы по производителям АКБ",
+                ],
+                [
+                    'url' => 'wiki/cat/'.Str::slug("Это интересно"),
+                    'seo_title' => "Полезные материалы по АКБ",
+                    'seo_description' => "Полезные материалы по АКБ",
+                ],
+            ]
+        );
+
     }
 }

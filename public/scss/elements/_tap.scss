@@ -1,37 +1,36 @@
 .tap_element {
     display: flex;
     flex-direction: column;
+}
 
+.tap_headers {
+    display: flex;
 
-    .tap_headers {
-        display: flex;
-
-        .tap_header {
-            padding: 10px 30px;
-            font-weight: bold;
-            font-size: 18px;
-            cursor: pointer;
-            &.active {
-                border-radius: $border_rad $border_rad 0 0;
-                background-color: $gray_bg_color;
-            }
+    .tap_header {
+        padding: 10px 30px;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        &.active {
+            border-radius: $border_rad $border_rad 0 0;
+            background-color: $gray_bg_color;
         }
     }
+}
 
-    .tap_bodys {
-        display: flex;
-        max-height: 400px;
+.tap_bodys {
+    display: flex;
+    max-height: 400px;
 
-        .tap_body {
-            display: none;
-            max-height: 100%;
-            padding: 20px;
-            background-color: $gray_bg_color;
-            flex: 1;
-            border-radius: 0 0 $border_rad $border_rad;
-            &.active{
-                display: flex;
-            }
+    .tap_body {
+        display: none;
+        max-height: 100%;
+        padding: 20px;
+        background-color: $gray_bg_color;
+        flex: 1;
+        border-radius: 0 0 $border_rad $border_rad;
+        &.active{
+            display: flex;
         }
     }
 }
@@ -39,11 +38,11 @@
 @media (max-width:480px) {
     .tap_element {
         font-size: 14px;
+    }
 
-        .tap_headers {
-            .tap_header {
-                font-size: 14px;
-            }
+    .tap_headers {
+        .tap_header {
+            font-size: 14px;
         }
     }
 }

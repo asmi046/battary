@@ -34,13 +34,13 @@ class BlogController extends Controller
 
     public function wiki_page($slug) {
         $post = Blog::where('slug', $slug)->first();
-
+        $more_posts = Blog::inRandomOrder()->take(4)->get();
 
         if(!$post) abort('404');
 
         return view('wiki.page', [
             'post' => $post,
-
+            'more_posts' => $more_posts
         ]);
     }
 }
