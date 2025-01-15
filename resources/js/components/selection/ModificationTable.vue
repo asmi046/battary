@@ -1,6 +1,6 @@
 <template>
   <div class="table_wrapper">
-    <table>
+    <table class="modification_table">
         <thead>
             <tr>
                 <th>Модификация</th>
@@ -13,13 +13,29 @@
         </thead>
         <tbody>
             <tr v-for="(item, index) in props.modifications" :key="index">
-                <td>{{ item.modification }}</td>
-                <td>{{ item.PS }} / {{ item.kW }}</td>
-                <td>{{ item.volume }}</td>
-                <td>{{ clemLocationToStr(item.clem_location) }}</td>
-                <td>{{ item.length }} / {{ item.width }} / {{ item.height }} </td>
                 <td>
-                    <a @click.prevent="selectElement(item)" class="button" href="#">Выбрать</a>
+                    <span class="mob_header">Модификация</span>
+                    <span class="value">{{ item.modification }}</span>
+                </td>
+                <td>
+                    <span class="mob_header">Мощность (Лс / кВт )</span>
+                    <span class="value">{{ item.PS }} / {{ item.kW }}</span>
+                </td>
+                <td>
+                    <span class="mob_header">Емкость (А/ч)</span>
+                    <span class="value">{{ item.volume }}</span>
+                </td>
+                <td>
+                    <span class="mob_header">Полярность</span>
+                    <span class="value">{{ clemLocationToStr(item.clem_location) }}</span>
+                </td>
+                <td>
+                    <span class="mob_header">Габариты (дл/шир/выс):</span>
+                    <span class="value">{{ item.length }} / {{ item.width }} / {{ item.height }}</span>
+                </td>
+                <td>
+                    <span class="mob_header">Управление</span>
+                    <span class="value"><a @click.prevent="selectElement(item)" class="button" href="#">Выбрать</a></span>
                 </td>
             </tr>
         </tbody>
