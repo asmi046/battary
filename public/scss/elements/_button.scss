@@ -34,6 +34,12 @@ button,
     background-color: $yello_color;
     border-color: $yello_color;
     color: $black_color;
+
+    &.favorite_fill {
+        background-color: $gray_bg_color;
+        border-color: $gray_bg_color;
+    }
+
     &:hover {
         background-color: $yello_color_hover;
         border-color: $yello_color_hover;
@@ -108,6 +114,10 @@ button,
         width:21px;
         height: 21px;
         margin: auto;
+    }
+
+    &.favorite_fill {
+        background-color: $gray_bg_color;
     }
 
     &:hover {

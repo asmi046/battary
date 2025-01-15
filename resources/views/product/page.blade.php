@@ -39,7 +39,8 @@
                         </div>
 
                         <div class="compire">
-                            <x-icon-button ancor="Добавить в сравнение" icon="compare_icon" class="button button-yellow" ></x-icon-button>
+                            <to-favorites-btn-page sku="{{$product->sku}}"></to-favorites-btn-page>
+                            {{-- <x-icon-button ancor="Добавить в сравнение" icon="compare_icon" class="button button-yellow" ></x-icon-button> --}}
                         </div>
                     </div>
 
@@ -62,14 +63,14 @@
         <div class="container">
             <h2 class="section_h2">Похожие товары</h2>
             <div class="product_list_slider">
-                <swiper-container init="false" id="popult_slider">
+                <popular-slider>
                     @foreach ($upsale as $item)
                         <swiper-slide>
                             <x-cards.product-card :item="$item"></x-cards.product-card>
                         </swiper-slide>
                     @endforeach
 
-                </swiper-container>
+                </popular-slider>
 
                 <x-slide.slide-button prefix="popular_main_slider"></x-slide.slide-button>
             </div>

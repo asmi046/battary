@@ -18,6 +18,7 @@ import FilterOpen from "./components/FilterOpen.vue"
 import ShopMap from "./components/shop_list/ShopMap.vue"
 import RegionSelect from "./components/region/RegionSelect.vue"
 
+import ToFavoritesBtnPage from "./components/favorites/ToFavoritesBtnPage.vue"
 import ToFavoritesBtn from "./components/favorites/ToFavoritesBtn.vue"
 import Favorites from "./components/favorites/Favorites.vue"
 import FavoritesCounter from "./components/favorites/FavoritesCounter.vue"
@@ -46,7 +47,8 @@ if (document.getElementById("main_app")) {
             PopularSlider,
             ProductPageSlider,
             SideMenu,
-            ToFavoritesBtn
+            ToFavoritesBtn,
+            ToFavoritesBtnPage
         },
 
         setup() {

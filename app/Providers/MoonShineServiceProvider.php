@@ -14,6 +14,7 @@ use MoonShine\Menu\MenuElement;
 use App\MoonShine\Resources\BlogResource;
 use App\MoonShine\Resources\ShopResource;
 use App\MoonShine\Resources\ProductResource;
+use App\MoonShine\Resources\SeoDataResource;
 use MoonShine\Resources\MoonShineUserResource;
 use App\MoonShine\Resources\BlogCategoryResource;
 use MoonShine\Resources\MoonShineUserRoleResource;
@@ -65,6 +66,11 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     new BlogCategoryResource()
                 )
             ])->icon('heroicons.outline.clipboard-document'),
+
+            MenuItem::make(
+                static fn() => __('SEO'),
+                new SeoDataResource()
+            )->icon('heroicons.outline.chart-bar-square'),
 
             MenuGroup::make(static fn() => __('moonshine::ui.resource.system'), [
                 MenuItem::make(

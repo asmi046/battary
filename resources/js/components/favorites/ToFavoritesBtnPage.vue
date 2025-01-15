@@ -1,5 +1,6 @@
 <template>
-    <a @click.prevent="addToBascet" href="#" :title="!in_favorites?'Добавить в сравнение':'Убрать из сравнения'" :class="{'favorite_fill':in_favorites}" class="compare_button">
+    <a @click.prevent="addToBascet" :class="{'favorite_fill':in_favorites}" class="icon_button button button-yellow" href="#">
+        <span v-html="!in_favorites?'Добавить в сравнение':'Убрать из сравнения'" ></span>
         <svg class="sprite_icon">
             <use xlink:href="#compare_icon"></use>
         </svg>
