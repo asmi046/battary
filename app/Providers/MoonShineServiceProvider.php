@@ -12,6 +12,7 @@ use MoonShine\Menu\MenuItem;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuElement;
 use App\MoonShine\Resources\BlogResource;
+use App\MoonShine\Resources\PageResource;
 use App\MoonShine\Resources\ShopResource;
 use App\MoonShine\Resources\ProductResource;
 use App\MoonShine\Resources\SeoDataResource;
@@ -66,6 +67,12 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     new BlogCategoryResource()
                 )
             ])->icon('heroicons.outline.clipboard-document'),
+
+
+            MenuItem::make(
+                static fn() => __('Страницы'),
+                new PageResource()
+            )->icon('heroicons.outline.clipboard-document'),
 
             MenuItem::make(
                 static fn() => __('SEO'),

@@ -22,8 +22,8 @@ class Page extends Model
     ];
 
     public $casts = [
-        'galery' => "Array",
-        'params' => "Array"
+        'galery' => "array",
+        'params' => "array"
     ];
 
 
