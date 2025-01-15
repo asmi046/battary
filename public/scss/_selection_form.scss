@@ -108,6 +108,16 @@
             background-repeat: no-repeat;
         }
    }
+
+   &.history_warning {
+        span {
+            padding-left: 0;
+            &:before {
+                content: "";
+                display: none;
+            }
+        }
+   }
 }
 
 .control_panel {

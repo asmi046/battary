@@ -1,9 +1,15 @@
 <div class="main_slide_elelemt">
-    <img src="{{ asset('img/slide_moto.webp') }}" alt="">
+    <img src="{{ Storage::url($item->img) }}" alt="{{ strip_tags($item->title) }}">
     <div class="shadow"></div>
     <div class="info">
-        <p class="head th">Аккумуляторы <br>для Мотоциклов</p>
-        <p class="sub_head">Компактные и прочные аккумуляторы с высокой стартовой мощностью</p>
-        <a href="#" class="button button-white">Подобрать</a>
+        <p class="head th">{!! $item->title !!}</p>
+        @if ($item->sub_title)
+            <p class="sub_head">{!! $item->sub_title !!}</p>
+        @endif
+
+        @if($item->lnk_text)
+            <a href="{{ $item->lnk ?? "#" }}" class="button button-white">{{ $item->lnk_text }}</a>
+        @endif
+
     </div>
 </div>

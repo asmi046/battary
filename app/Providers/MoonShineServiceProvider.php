@@ -12,8 +12,10 @@ use MoonShine\Menu\MenuItem;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuElement;
 use App\MoonShine\Resources\BlogResource;
+use App\MoonShine\Resources\MenuResource;
 use App\MoonShine\Resources\PageResource;
 use App\MoonShine\Resources\ShopResource;
+use App\MoonShine\Resources\BannerResource;
 use App\MoonShine\Resources\ProductResource;
 use App\MoonShine\Resources\SeoDataResource;
 use MoonShine\Resources\MoonShineUserResource;
@@ -46,6 +48,12 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
     protected function menu(): array
     {
         return [
+
+            MenuItem::make(
+                static fn() => __('Мню'),
+                new MenuResource()
+            )->icon('heroicons.bars-3') ,
+
             MenuItem::make(
                 static fn() => __('Сеть магазинов'),
                 new ShopResource()
@@ -73,6 +81,11 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 static fn() => __('Страницы'),
                 new PageResource()
             )->icon('heroicons.outline.clipboard-document'),
+
+            MenuItem::make(
+                static fn() => __('Баннеры'),
+                new BannerResource()
+            )->icon('heroicons.outline.eye'),
 
             MenuItem::make(
                 static fn() => __('SEO'),

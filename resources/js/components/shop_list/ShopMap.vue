@@ -15,7 +15,7 @@
 
         </div>
         <div class="column map_side">
-            <div class="history">
+            <div class="history warning history_warning">
                 <svg class="sprite_icon">
                     <use xlink:href="#apr_icon"></use>
                 </svg>

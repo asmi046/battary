@@ -1,7 +1,7 @@
 <template>
     <swiper-container
         id="popult_slider"
-        :slides-per-view="3"
+        :slides-per-view="2"
         :space-between="20"
         :breakpoints="{
 
