@@ -23,6 +23,8 @@ class SelectionController extends Controller
             "height" => "%",
         ];
         foreach ($all_product as $item) {
+            if ($item->length == 0)
+                continue;
             $key = $item->length." / ".$item->width." / ".$item->height;
             $result[$key] = [
                 "text" => $key,

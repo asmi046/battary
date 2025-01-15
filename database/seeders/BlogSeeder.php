@@ -18,6 +18,7 @@ class BlogSeeder extends Seeder
     {
         Storage::disk('public')->put('blog/taz.webp', file_get_contents( public_path('site_data/blog/taz.webp') ), 'public');
         Storage::disk('public')->put('blog/vtor.webp', file_get_contents( public_path('site_data/blog/vtors.webp') ), 'public');
+        Storage::disk('public')->put('blog/priem.jpg', file_get_contents( public_path('site_data/blog/priem.jpg') ), 'public');
 
         $elem_id = DB::table("blogs")->insertGetId(
             [
@@ -65,6 +66,30 @@ class BlogSeeder extends Seeder
                 'url' => 'wiki/'.Str::slug("Использование вторсырья при производстве аккумуляторов"),
                 'seo_title' => "Использование вторсырья при производстве аккумуляторов",
                 'seo_description' => "Использование вторсырья при производстве аккумуляторов",
+            ],
+        );
+
+        $elem_id = DB::table("blogs")->insertGetId(
+            [
+                'title' => "Приём старых аккумуляторов по выгодным ценам",
+                'slug' => Str::slug("Приём старых аккумуляторов по выгодным ценам в магазинах нашей сети"),
+                'img' => 'blog/priem.jpg',
+                'description' => file_get_contents(public_path('site_data/blog/priem.html'))
+            ]
+        );
+
+        DB::table("blog_blog_category")->insertGetId(
+            [
+                'blog_id' => $elem_id,
+                'blog_category_id' => 2,
+            ]
+        );
+
+        DB::table("seo_data")->insert(
+            [
+                'url' => 'wiki/'.Str::slug("Приём старых аккумуляторов по выгодным ценам"),
+                'seo_title' => "Приём старых аккумуляторов по выгодным ценам",
+                'seo_description' => "Приём старых аккумуляторов по выгодным ценам",
             ],
         );
     }

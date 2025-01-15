@@ -16,6 +16,7 @@
     <meta name="_token" content="{{ csrf_token() }}">
 
 
+
     <script>
         window.asset = "{{ asset('') }}";
         window.storage = "{{ asset('storage') }}";
@@ -27,6 +28,9 @@
         'resources/js/app.js',
         'public/scss/main.scss'
     ])
+
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="//code.jivo.ru/widget/P4eRoHwzy3" async></script>
 </head>
 <body>
     @include("allicon")

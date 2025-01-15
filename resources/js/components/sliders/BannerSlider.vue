@@ -2,6 +2,7 @@
     <swiper-container
         id="banner_slider"
         :slides-per-view="1"
+        :lazy="true"
         :navigation="{
             nextEl: '#main_slide_button_next',
             prevEl: '#main_slide_button_prev',
@@ -12,5 +13,4 @@
 </template>
 
 <script setup>
-
 </script>

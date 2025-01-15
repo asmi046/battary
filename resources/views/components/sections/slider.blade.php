@@ -2,13 +2,6 @@
     <div class="container">
         <div class="slider_control_wrapper">
             <div class="slider">
-                {{-- <swiper-container init="false" id="banner_slider">
-                    @for ($i=0; $i<3; $i++)
-                        <swiper-slide>
-                            <x-slide.slide-main></x-slide.slide-main>
-                        </swiper-slide>
-                    @endfor
-                </swiper-container> --}}
                 <banner-slider>
                     @for ($i=0; $i<3; $i++)
                         <swiper-slide>
