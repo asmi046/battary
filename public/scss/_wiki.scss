@@ -57,6 +57,7 @@
         border-radius: $border_rad;
         border: 1px solid $gray_border_color;
         overflow: hidden;
+        display: flex;
     }
 }
 

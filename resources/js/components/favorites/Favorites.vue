@@ -15,11 +15,11 @@
         <div class="list">
             <div v-for="(item, index) in elements" :key="index" class="tovar">
                 <div class="h tovar_h">
-                    <div class="photo">
+                    <a :href="'/catalog/product/'+item.tovar_data.slug" class="photo">
                         <img :src="storage_path+'/'+item.tovar_data.img" :alt="item.tovar_data.name">
-                    </div>
+                    </a>
                     <h4 class="name">
-                        {{ item.tovar_data.name }}
+                        <a :href="'/catalog/product/'+item.tovar_data.slug">{{ item.tovar_data.name }}</a>
                     </h4>
                     <div class="price">
                         {{ item.tovar_data.price }}₽

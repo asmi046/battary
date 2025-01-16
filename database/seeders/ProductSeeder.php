@@ -92,7 +92,7 @@ class ProductSeeder extends Seeder
 
                 DB::table("seo_data")->insert(
                     [
-                        'url' => 'product/'.$inserted['slug'],
+                        'url' => 'catalog/product/'.$inserted['slug'],
                         'seo_title' => $inserted['name'],
                         'seo_description' => $inserted['name'],
                     ]

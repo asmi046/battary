@@ -15,6 +15,7 @@
         color: white;
         border-radius: $border_rad;
         gap:40px;
+        margin: 40px 0;
         padding: 15px 150px;
         text-transform: uppercase;
         line-height: 1.2;
@@ -63,6 +64,12 @@
             overflow: hidden;
             border:1px solid $gray_border_color;
             display: flex;
+        }
+    }
+
+    .column.text {
+        p:first-child {
+            margin-top: 0;
         }
     }
 }
