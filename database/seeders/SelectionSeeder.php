@@ -13,6 +13,33 @@ use DB;
 class SelectionSeeder extends Seeder
 {
 
+    protected function char_replace(string $name) {
+        $replace = [
+            "?KERMAN-VOLVO" => "AKERMAN-VOLVO",
+            "?VERUM AKTIV" => "AVERUM AKTIV",
+            "?VR?SEN" => "AVRESEN",
+            "Ger?tetr?ger" => "Gerаtetrаger",
+            "AUW?RTER" => "AUWARTER",
+            "B?HRER" => "BUHRER",
+            "BR?YT" => "BRAYT",
+            "CITRO?N" => "CITROEN",
+            "H?RN?" => "HYRNU",
+            "K?LBLE" => "KYLBLE",
+            "K?SSBOHRER" => "KASSBOHRER",
+            "L?NNEN TEHTAAT" => "LANNEN TEHTAAT",
+            "SANTA F?" => "SANTA FE",
+            "SC?NIC" => "SCENIC",
+            "MEGANE II Coup?" => "MEGANE II Coupe",
+            "Mets?koneet" => "Metsakoneet",
+            "MURCI?LAGO" => "MURCIELAGO",
+            "CEE?D" => "CEED",
+            "TAUNUS ?80" => "TAUNUS '80",
+            "Ty?koneet" => "Tyokoneet",
+        ];
+
+        return isset($replace[$name])?$replace[$name]:$name;
+    }
+
     public function get_power($item) {
         $mod = $item['Модификация'];
         $power = substr($mod, strripos($mod," ("), 1000);
@@ -63,7 +90,8 @@ class SelectionSeeder extends Seeder
             DB::table("selections")->insert(
                 [
                     'type' => $item['Type'],
-                    'brand' => $item['Бренд'],
+                    'brand' => $this->char_replace($item['Бренд']),
+                    // 'brand' => $item['Бренд'],
                     'model' => $item['Модель'],
 
                     // 'modification' => $pow['model'],
