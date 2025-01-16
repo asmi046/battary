@@ -35,6 +35,40 @@
     }
 }
 
+.main_selector_section {
+    .tap_headers {
+        gap: 20px;
+        .tap_header {
+            color: $main_color;
+            background-color: white;
+            border: 1px solid $main_color;
+            padding: 10px 30px;
+            border-radius: $border_rad_big;
+            font-weight: normal;
+            font-size: unset;
+            height: unset;
+            &.active {
+                background-color: $main_color;
+                color:white;
+            }
+
+        }
+    }
+
+    .tap_bodys {
+        max-height: unset;
+        .tap_body {
+            background-color: unset;
+            padding: 20px 0;
+            max-height: unset;
+            &.active {
+                flex-direction: column;
+
+            }
+        }
+    }
+}
+
 @media (max-width:480px) {
     .tap_element {
         font-size: 14px;

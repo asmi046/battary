@@ -103,6 +103,16 @@ import { ref, watch } from 'vue';
         productQuery()
     })
 
+    const getStartParams = () => {
+        const brand = new URLSearchParams(window.location.search).get("brand");
+        const model = new URLSearchParams(window.location.search).get("model");
+        if (brand && model) {
+            selectedTsType.value = "Легковой автомобиль";
+            selectedTsBrand.value = brand;
+            selectedTsModel.value = model;
+        }
+    }
+
     const clearSelectParam = () => {
         productList.value = []
         showModificationList.value = true
@@ -155,13 +165,15 @@ import { ref, watch } from 'vue';
                 showModificationList.value = true;
             }
             console.log(response)
+            getStartParams();
         })
         .catch( (error) => {
             console.log(error)
         });
     }
 
-
     selectionQuery()
+
+
 
 </script>

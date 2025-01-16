@@ -110,6 +110,7 @@ img {
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 40px;
+    margin-top: 0;
 }
 
 swiper-container {
@@ -176,6 +177,7 @@ swiper-container {
 @import "menues";
 @import "slider-section";
 @import "technic-type";
+@import "main-selector";
 @import "util";
 @import "about";
 @import "product";

@@ -41,6 +41,8 @@ import ProductList from './ProductList.vue'
 
     let order = ref("")
 
+    let startSize = ref("%")
+
     let selectedSize = ref("%")
     let selectedVolume = ref("%")
     let selectedAmperage = ref("")
@@ -91,6 +93,7 @@ import ProductList from './ProductList.vue'
         axios.get('/get_akb_size_list')
         .then((response) => {
             sizeList.value = response.data
+            getStartParams()
         })
         .catch( (error) => {
             console.log(error)
@@ -119,6 +122,14 @@ import ProductList from './ProductList.vue'
         getProductList()
     })
 
+    const getStartParams = () => {
+        const length = new URLSearchParams(window.location.search).get("length");
+        const width = new URLSearchParams(window.location.search).get("width");
+        const height = new URLSearchParams(window.location.search).get("height");
+        if (length && width && height) {
+            selectedSize.value = length +' / '+ width +' / '+ height
+        }
+    }
 
 
     const selectionQuery = () => {
@@ -160,5 +171,6 @@ import ProductList from './ProductList.vue'
     }
 
     getSizeList()
+
 
 </script>

@@ -23,6 +23,8 @@ import ToFavoritesBtn from "./components/favorites/ToFavoritesBtn.vue"
 import Favorites from "./components/favorites/Favorites.vue"
 import FavoritesCounter from "./components/favorites/FavoritesCounter.vue"
 
+import MainSelector from "./components/main_select/MainSelector.vue"
+
 import BannerSlider from "./components/sliders/BannerSlider.vue"
 import PopularSlider from "./components/sliders/PopularSlider.vue"
 import ProductPageSlider from "./components/sliders/ProductPageSlider.vue"
@@ -48,7 +50,8 @@ if (document.getElementById("main_app")) {
             ProductPageSlider,
             SideMenu,
             ToFavoritesBtn,
-            ToFavoritesBtnPage
+            ToFavoritesBtnPage,
+            MainSelector
         },
 
         setup() {
