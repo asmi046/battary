@@ -24,11 +24,10 @@
 
     @vite([
         'resources/css/app.css',
-        'resources/js/fslightbox.js',
         'resources/js/app.js',
         'public/scss/main.scss'
     ])
-
+    <script src="{{ asset('js/fslightbox.js') }}"></script>
     <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="//code.jivo.ru/widget/P4eRoHwzy3" async></script>
 </head>

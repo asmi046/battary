@@ -34,6 +34,11 @@ import SideMenu from "./components/SideMenu.vue"
 
 // let side_menue = new SideMenu('#main_side_menue', '.show_menue_button');
 
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    fsLightbox.open();
+});
+
 if (document.getElementById("main_app")) {
     const main_app = createApp({
         components:{

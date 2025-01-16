@@ -86,10 +86,16 @@
         max-height: 500px;
         min-height: 500px;
 
-        swiper-slide img {
-            width:70%;
-            margin: auto
-            ;
+        swiper-slide{
+            display: flex;
+            a{
+                margin: auto;
+                width:70%;
+                img {
+
+
+                }
+            }
         }
 
         .slide_button_wrapper {
