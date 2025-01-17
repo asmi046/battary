@@ -44,6 +44,14 @@
         <x-sections.footer></x-sections.footer>
         <side-menu>
             <x-menues.puncts></x-menues.puncts>
+            <p class="menu_header">Каталог</p>
+            <x-menues.puncts name="Каталог" wrap="side_cat_menu"></x-menues.puncts>
+
+            <x-icon-button href="{{ route('compare') }}" ancor="Сравнить" icon="compare_icon" class="button button-yellow button_compare" >
+                <div class="favorites_counter">
+                    <favorites-counter></favorites-counter>
+                </div>
+            </x-icon-button>
         </side-menu>
     </main>
 </body>

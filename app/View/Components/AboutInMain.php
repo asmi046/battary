@@ -24,7 +24,7 @@ class AboutInMain extends Component
             $description = ($about_content->description)?$about_content->description:"Сеть специализированных магазинов Батарейка";
             $title = ($about_content->title)?$about_content->title:"О нас";
             return [
-                "title" => $title,
+                "title" => "Сеть магазинов «Батарейка»",
                 "description" => $description,
             ];
         });
