@@ -18,7 +18,7 @@
         </div>
     </nav>
 
-    <div @click="tgMenue" class="show_menue_button">
+    <div @click="tgMenue" :class="{active:showMenue}" class="show_menue_button">
         <div class="icon-menu toggle_menu" aria-label="Бургер меню">
             <span></span>
             <span></span>
