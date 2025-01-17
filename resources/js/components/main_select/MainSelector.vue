@@ -4,6 +4,11 @@
             <template v-slot:body1>
                 <marka-selector v-show="modelList.length == 0" v-model="selectMarka"></marka-selector>
                 <alpha-selector v-show="modelList.length == 0" v-model="firstChar"></alpha-selector>
+
+                <svg v-show="doLoad" class="sprite_icon loader_svg">
+                    <use xlink:href="#loader_icon"></use>
+                </svg>
+
                 <div v-if="markaList.length != 0" class="main_select_list brand_list">
                     <h3>Выберите марку авто</h3>
                     <div class="body">
@@ -43,6 +48,7 @@
     import MarkaSelector from "./MarkaSelector.vue"
     import AlphaSelector from "./AlphaSelector.vue"
 
+    let doLoad = ref(false)
     let firstChar = ref("")
     let selectMarka = ref("")
     let markaList = ref([])
@@ -78,17 +84,20 @@
     }
 
     const getMarkaByChar = (char) => {
+        doLoad.value = true
         axios.get('/get_marka_by_char/'+char)
         .then((response) => {
             markaList.value = response.data
-            console.log(response)
+            doLoad.value = false
         })
         .catch( (error) => {
             console.log(error)
+            doLoad.value = false
         });
     }
 
     const getModelList = (char) => {
+        doLoad.value = true
         axios.get('/selection_filter/model', {
             params: {
                 type: "Легковой автомобиль",
@@ -97,10 +106,11 @@
         })
         .then((response) => {
             modelList.value = response.data
-            console.log(response)
+            doLoad.value = false
         })
         .catch( (error) => {
             console.log(error)
+            doLoad.value = false
         });
     }
 
