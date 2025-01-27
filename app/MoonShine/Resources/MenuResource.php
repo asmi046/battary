@@ -61,10 +61,10 @@ class MenuResource extends ModelResource
         return [
             Block::make([
                 ID::make()->sortable(),
-                Text::make('Название', 'title'),
-                Text::make('Ссылка', 'lnk'),
-                Text::make('Меню', 'menu'),
-                Number::make('Порядок сортировки', 'order')->sortable(),
+                Text::make('Название', 'title')->required(),
+                Text::make('Ссылка', 'lnk')->default("#")->required(),
+                Text::make('Меню', 'menu')->default("Главное меню")->required(),
+                Number::make('Порядок сортировки', 'order')->required()->default(0)->sortable(),
             ]),
         ];
     }

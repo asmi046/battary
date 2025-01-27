@@ -119,6 +119,10 @@ swiper-container {
     height: 100%;
     border-radius: $border_rad;
     overflow: hidden;
+
+    swiper-slide {
+        max-height: 100%;
+    }
 }
 
 .uni_breadcrumbs {

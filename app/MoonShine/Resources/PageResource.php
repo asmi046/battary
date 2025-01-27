@@ -49,9 +49,9 @@ class PageResource extends ModelResource
         return [
             Block::make([
                 ID::make()->sortable(),
-                Text::make('Название', 'title'),
-                Slug::make('Окончание сылки', 'slug')->hideOnIndex(),
-                Image::make('Основное изображение', 'img')->dir('pages'),
+                Text::make('Название', 'title')->required(),
+                Slug::make('Окончание сылки', 'slug')->from('title'),
+                Image::make('Основное изображение', 'img')->dir('pages')->hideOnIndex(),
                 TinyMce::make('Описание', 'description')->hideOnIndex(),
 
                 Json::make('Галерея', 'galery')
@@ -59,7 +59,7 @@ class PageResource extends ModelResource
                         Position::make(),
                         Image::make('Изображение', 'img')->dir('pages'),
                         Text::make('Заголовок', 'title'),
-                    ]),
+                    ])->hideOnIndex(),
 
                 Json::make('Параметры', 'params')
                     ->fields([
@@ -67,10 +67,10 @@ class PageResource extends ModelResource
                         Text::make('Категория', 'cat'),
                         Text::make('Заголовок', 'title'),
                         Text::make('Значение', 'value'),
-                    ]),
+                    ])->hideOnIndex(),
 
-                Text::make('SEO заголовок', 'seo_title')->hideOnIndex(),
-                Textarea::make('SEO описание', 'seo_description')->hideOnIndex()
+                // Text::make('SEO заголовок', 'seo_title')->hideOnIndex(),
+                // Textarea::make('SEO описание', 'seo_description')->hideOnIndex()
             ]),
         ];
     }

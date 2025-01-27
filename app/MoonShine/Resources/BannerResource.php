@@ -47,9 +47,9 @@ class BannerResource extends ModelResource
         return [
             Block::make([
                 ID::make()->sortable(),
-                Number::make('Порядок', 'order'),
-                Image::make('Изображение', 'img')->dir('banners'),
-                Text::make('Заголовок', 'title'),
+                Number::make('Порядок', 'order')->default(0),
+                Image::make('Изображение', 'img')->required()->dir('banners'),
+                Text::make('Заголовок', 'title')->required(),
                 Text::make('Подзаголовок', 'sub_title'),
                 Text::make('Ссылка', 'lnk')->hideOnIndex(),
                 Text::make('Текст кнопки', 'lnk_text')->hideOnIndex(),

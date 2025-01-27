@@ -9,6 +9,7 @@ use MoonShine\Fields\ID;
 
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Field;
+use MoonShine\Fields\Image;
 use MoonShine\Fields\Number;
 use MoonShine\Fields\Switcher;
 use MoonShine\Handlers\ExportHandler;
@@ -49,7 +50,6 @@ class ShopResource extends ModelResource
             Text::make('Название', 'name'),
             Text::make('Город', 'city'),
             Text::make('Адрес', 'adress'),
-            Text::make('Адрес', 'adress'),
             Switcher::make('Проверенный', 'aproved')
         ];
     }
@@ -61,6 +61,19 @@ class ShopResource extends ModelResource
     {
         return [
             ID::make()->sortable(),
+
+            Number::make('Порядок вывода', 'order')->default(1)->required(),
+            Image::make('Фото магазина', 'img'),
+            Text::make('Название', 'name')->required(),
+            Text::make('Область', 'obl')->required(),
+            Text::make('Город', 'city')->required(),
+            Text::make('Адрес', 'adress')->required(),
+            Text::make('Координаты', 'geo'),
+            Text::make('Время работы', 'time_work'),
+            Text::make('Телефон', 'phone')->required(),
+            Text::make('e-mail', 'email'),
+            Switcher::make('Проверенный', 'aproved')
+
         ];
     }
 

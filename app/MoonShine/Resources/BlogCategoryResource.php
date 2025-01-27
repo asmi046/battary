@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace App\MoonShine\Resources;
 
 use MoonShine\Fields\ID;
-use MoonShine\Fields\Text;
+use MoonShine\Fields\Slug;
 
+use MoonShine\Fields\Text;
 use MoonShine\Fields\Field;
 use App\Models\BlogCategory;
+use MoonShine\Fields\TinyMce;
 use MoonShine\Handlers\ExportHandler;
 use MoonShine\Handlers\ImportHandler;
 use MoonShine\Resources\ModelResource;
@@ -44,6 +46,7 @@ class BlogCategoryResource extends ModelResource
         return [
             ID::make()->sortable(),
             Text::make('Название', 'title'),
+            Slug::make('Ссылка', 'slug')->from('title'),
         ];
     }
 
@@ -54,6 +57,9 @@ class BlogCategoryResource extends ModelResource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Название', 'title')->required(),
+            Slug::make('Ссылка', 'slug')->from('title'),
+            TinyMce::make('Описание', 'description')->hideOnIndex(),
         ];
     }
 
@@ -64,6 +70,9 @@ class BlogCategoryResource extends ModelResource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Название', 'title')->required(),
+            Slug::make('Ссылка', 'slug')->from('title'),
+            TinyMce::make('Описание', 'description')->hideOnIndex(),
         ];
     }
 

@@ -7,6 +7,7 @@
         width: 57%;
         max-width: 100%;
         position:relative;
+        height: 407px;
         .slide_button_wrapper {
             z-index: 50;
             right: 20px;
@@ -154,6 +155,11 @@
 
     .slider_control_wrapper {
         gap: 20px;
+
+        .slider {
+            height: 250px;
+        }
+
         .controls .control {
             padding: 15px 20px;
 
@@ -161,15 +167,6 @@
                 font-size: 18px;
                 margin-bottom: 20px;
             }
-        }
-    }
-}
-
-@media (max-width:480px) {
-
-    .main_slide_elelemt {
-        .button{
-            display: none;
         }
     }
 }

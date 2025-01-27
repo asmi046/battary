@@ -7,9 +7,11 @@ namespace App\MoonShine\Resources;
 use App\Models\Blog;
 use MoonShine\Fields\ID;
 
+use MoonShine\Fields\Slug;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Field;
 use MoonShine\Fields\Image;
+use MoonShine\Fields\TinyMce;
 use MoonShine\Handlers\ExportHandler;
 use MoonShine\Handlers\ImportHandler;
 use MoonShine\Resources\ModelResource;
@@ -57,6 +59,10 @@ class BlogResource extends ModelResource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Название', 'title')->required(),
+            Slug::make('Ссылка', 'slug')->from('title'),
+            Image::make('Изображения', 'img')->dir('blog'),
+            TinyMce::make('Описание', 'description'),
         ];
     }
 
@@ -67,6 +73,10 @@ class BlogResource extends ModelResource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Название', 'title')->required(),
+            Slug::make('Ссылка', 'slug')->from('title'),
+            Image::make('Изображения', 'img')->dir('blog'),
+            TinyMce::make('Описание', 'description'),
         ];
     }
 
