@@ -16,6 +16,18 @@
                                 <img src="{{Storage::url($product->img)}}" alt="{{$product->name}}">
                             </a>
                         </swiper-slide>
+                            @if ($product->galery)
+                                @foreach ($product->galery as $item)
+                                    <swiper-slide>
+                                        <a data-fslightbox href="{{Storage::url($item['img'])}}">
+                                            <img src="{{Storage::url($item['img'])}}" alt="{{$item['title']}}">
+                                        </a>
+                                    </swiper-slide>
+                                @endforeach
+                            @endif
+
+
+
                     </product-page-slider>
                     <x-slide.slide-button prefix="product_page_button"></x-slide.slide-button>
                 </div>

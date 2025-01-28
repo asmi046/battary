@@ -7,14 +7,26 @@ namespace App\MoonShine\Resources;
 use App\Models\Product;
 use MoonShine\Fields\ID;
 
+use MoonShine\Fields\Json;
+use MoonShine\Fields\Slug;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Field;
 use MoonShine\Fields\Image;
+use MoonShine\Fields\Number;
+use MoonShine\Fields\Select;
+use MoonShine\Decorations\Tab;
+use MoonShine\Fields\Position;
+use MoonShine\Fields\Switcher;
+use MoonShine\Decorations\Tabs;
 use MoonShine\Handlers\ExportHandler;
 use MoonShine\Handlers\ImportHandler;
 use MoonShine\Resources\ModelResource;
 use Illuminate\Database\Eloquent\Model;
+use MoonShine\ActionButtons\ActionButton;
 use MoonShine\Components\MoonShineComponent;
+use App\MoonShine\Resources\CategoryResource;
+use MoonShine\Tests\Fixtures\Models\Category;
+use MoonShine\Fields\Relationships\BelongsToMany;
 
 /**
  * @extends ModelResource<Product>
@@ -37,6 +49,24 @@ class ProductResource extends ModelResource
         return null;
     }
 
+    public function filters(): array
+    {
+        return [
+            Text::make('Название', 'name'),
+            Text::make('Артикул', 'sku'),
+            Text::make('Бренд', 'brand'),
+            Text::make('Описание SEO', 'seo_description'),
+            Select::make('Тип', 'type')
+                    ->options([
+                        'Аккумуляторы для грузовых автомобилей' => 'Аккумуляторы для грузовых автомобилей',
+                        'Аккумуляторы для легковых автомобилей' => 'Аккумуляторы для легковых автомобилей',
+                        'Аккумуляторы для мототехники' => 'Аккумуляторы для мототехники',
+                        'Аккумуляторы для спецтехники' => 'Аккумуляторы для спецтехники',
+                        'Тяговые аккумуляторы' => 'Тяговые аккумуляторы',
+                    ])->nullable()
+        ];
+    }
+
 
     /**
      * @return list<Field>
@@ -45,8 +75,10 @@ class ProductResource extends ModelResource
     {
         return [
             ID::make()->sortable(),
+            Switcher::make('Показывать товар', 'show'),
             Image::make('Изображения', 'img')->dir('products'),
             Text::make('Название', 'name'),
+            Text::make('Артикул', 'sku'),
             Text::make('Цена', 'price'),
         ];
     }
@@ -57,7 +89,66 @@ class ProductResource extends ModelResource
     public function formFields(): array
     {
         return [
-            ID::make()->sortable(),
+
+            Tabs::make([
+                Tab::make('Товар', [
+                    ID::make()->sortable(),
+                    Switcher::make('Показывать товар', 'show'),
+                    Text::make('Название', 'name')->required(),
+                    Slug::make('Ссылка', 'slug')->from('name'),
+                    Text::make('Артикул', 'sku')->required(),
+                    Text::make('Бренд', 'brand'),
+                    Text::make('Серия', 'series'),
+                    Image::make('Изображения', 'img')->dir('products'),
+                    Text::make('Цена', 'price')->required(),
+                    Text::make('Старая цена', 'old_price'),
+
+                ]),
+                Tab::make('Параметры товара', [
+                    Number::make('Ток (EN)', 'amperage'),
+                    Text::make('Высота', 'height'),
+                    Text::make('Ширина', 'width'),
+                    Text::make('Длинна', 'length'),
+                    Select::make('Расположение клемм', 'clem_location')
+                    ->options([
+                        1 => 'Прямая',
+                        0 => 'Обратная',
+                    ])->nullable(),
+
+                    Text::make('Вольтаж', 'voltage'),
+                    Switcher::make('Популярный товар', 'popular'),
+                    Select::make('Тип', 'type')
+                    ->options([
+                        'Аккумуляторы для грузовых автомобилей' => 'Аккумуляторы для грузовых автомобилей',
+                        'Аккумуляторы для легковых автомобилей' => 'Аккумуляторы для легковых автомобилей',
+                        'Аккумуляторы для мототехники' => 'Аккумуляторы для мототехники',
+                        'Аккумуляторы для спецтехники' => 'Аккумуляторы для спецтехники',
+                        'Тяговые аккумуляторы' => 'Тяговые аккумуляторы',
+                    ])->nullable()
+                ]),
+                Tab::make('Галерея товара', [
+                    Json::make('Галерея изображений', 'galery')
+                        ->fields([
+                            Position::make(),
+                            Text::make('Заголовок', 'title'),
+                            Image::make('Изображения', 'img')->dir('products'),
+                        ])
+                ]),
+                Tab::make('Категории товара', [
+                    BelongsToMany::make('Категории товара', 'category_tovars', resource: new CategoryResource())
+                ])
+            ]),
+
+            ActionButton::make(
+                label: 'Просмотр страницы товара',
+                url: route('product_page', $this->getItem()['slug']),
+            )
+            ->blank()
+            ->success()
+
+
+
+
         ];
     }
 

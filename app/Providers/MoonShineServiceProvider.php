@@ -18,6 +18,7 @@ use App\MoonShine\Resources\ShopResource;
 use App\MoonShine\Resources\BannerResource;
 use App\MoonShine\Resources\ProductResource;
 use App\MoonShine\Resources\SeoDataResource;
+use App\MoonShine\Resources\CategoryResource;
 use MoonShine\Resources\MoonShineUserResource;
 use App\MoonShine\Resources\BlogCategoryResource;
 use MoonShine\Resources\MoonShineUserRoleResource;
@@ -59,10 +60,16 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 new ShopResource()
             )->icon('heroicons.outline.building-storefront'),
 
-            MenuItem::make(
-                static fn() => __('Товары'),
-                new ProductResource()
-            )->icon('heroicons.battery-100'),
+            MenuGroup::make(static fn() => __('Товары'), [
+                MenuItem::make(
+                    static fn() => __('Все товары'),
+                    new ProductResource()
+                ),
+                MenuItem::make(
+                    static fn() => __('Категории'),
+                    new CategoryResource()
+                )
+            ])->icon('heroicons.battery-100'),
 
             MenuGroup::make(static fn() => __('База знаний'), [
                 MenuItem::make(

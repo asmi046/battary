@@ -31,7 +31,7 @@ class Product extends Model
     ];
 
     public $casts = [
-        'galery' => "Array"
+        'galery' => "array"
     ];
 
     public function category_tovars() {

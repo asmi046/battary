@@ -27,6 +27,9 @@ class Category extends Model
         return $this->belongsToMany(ProductGroup::class);
     }
 
+    public function parent_category() {
+        return $this->belongsTo(Category::class,"parentid", "id");
+    }
 
     public function setSlugAttribute($value)
     {
