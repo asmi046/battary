@@ -14,7 +14,17 @@
         @if ($item['old_price'])
             <span>{{ $item['old_price'] }}₽</span>
         @endif
-        {{ $item['price'] }}₽
+
+        @if ($item->loadedData && isset($item->loadedData[0]))
+            <span class="real">
+                {{ $item->loadedData[0]->price }} ₽
+            </span>
+        @else
+            <span class="real">
+                По запросу
+            </span>
+        @endif
+        {{-- {{ $item['price'] }}₽ --}}
     </p>
     <div class="control_panel">
         <a href="{{ route('product_page', $item['slug']) }}" title="Подробнее" class="button more">Подробнее</a>

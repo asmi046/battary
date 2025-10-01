@@ -5,7 +5,7 @@
                 {{ $item->shop }}
             </div>
             <div class="count">
-                {{ $item->nap }} шт.
+                {{ $item->nal }} шт.
             </div>
         </div>
     @endforeach

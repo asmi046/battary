@@ -45,9 +45,17 @@
                                 9000 ₽
                             </span> --}}
 
-                            <span class="real">
-                                {{ $product->price }} ₽
-                            </span>
+                            @if ($nal && isset($nal[0]))
+                                <span class="real">
+                                    {{ $nal[0]->price }} ₽
+                                </span>
+                            @else
+                                <span class="real">
+                                    По запросу
+                                </span>
+                            @endif
+
+
                         </div>
 
                         <div class="compire">

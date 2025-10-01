@@ -34,8 +34,15 @@ class Product extends Model
         'galery' => "array"
     ];
 
+    public $with = ['loadedData'];
+
     public function category_tovars() {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function loadedData()
+    {
+        return $this->hasMany(LoadetData::class, 'sku', 'sku')->where('shop', "!=", "");
     }
 
     public function setSlugAttribute($value)

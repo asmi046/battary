@@ -45,7 +45,6 @@ class LoadData extends Command
         foreach ($records as $item) {
             print_r($item);
             // if ($index > 3)return;
-
             DB::table("loadet_data")->insert(
                 [
                     'sku' => $item['Артикул'],
@@ -62,7 +61,7 @@ class LoadData extends Command
                     'producer' => $item['Производитель'],
                     'tovar_type' => $item['Тип товара'],
                     'nal' => intval(str_replace("Вналичии ","", $item['Наличие'])),
-                    'price' => floatval(str_replace(" ","", $item['Цена'])),
+                    'price' => floatval(str_replace(["�", " "," "],"", $item['Цена'])),
                     'shop' => $item['Магазин']
                 ]
             );

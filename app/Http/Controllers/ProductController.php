@@ -28,7 +28,7 @@ class ProductController extends Controller
         $all_cat = Category::where('parentid', 0)->get();
         $all_product = Product::select()->filter($request)->paginate(15)->withQueryString();
         $all_type = Product::select('type')->groupBy('type')->get();
-
+        // dd($all_product);
         return view('product.index', [
             'all_cat' => $all_cat,
             'all_product' => $all_product,
@@ -44,8 +44,8 @@ class ProductController extends Controller
         $product = Product::where('slug', $slug)->first();
         if(!$product) abort('404');
 
-        $nal = LoadetData::with('shop_data')->where('sku', $product->sku)->where('shop', "!=", "")->orderByRaw("shop") ->get();
-
+        // $nal = LoadetData::with('shop_data')->where('sku', $product->sku)->where('shop', "!=", "")->orderByRaw("shop") ->get();
+        // dd($nal, $product->sku);
         $q_list = [];
 
         if ($product->clem_location === 1) $q_list = [1, 4];
@@ -58,7 +58,7 @@ class ProductController extends Controller
 
         return view('product.page', [
             'product' => $product,
-            'nal' => $nal,
+            'nal' => $product->loadedData,
             'upsale' => $upsale
         ]);
     }

@@ -58,7 +58,7 @@ class ProductSeeder extends Seeder
 
                 if (!empty($item['img'])) {
                     $imgUrl = "products/". Str::slug($item['name'])."_".$index.".jpg";
-                    Storage::disk('public')->put($imgUrl, file_get_contents($item['img']), 'public');
+                    // Storage::disk('public')->put($imgUrl, file_get_contents($item['img']), 'public');
                 }
 
                 $popular = ($index % 18) == 0;
