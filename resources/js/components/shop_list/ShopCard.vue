@@ -11,6 +11,7 @@
             <h4>{{ props.item.name }}</h4>
             <p>Адрес: {{ props.item.adress }}</p>
             <p>Телефон: {{ props.item.phone }}</p>
+            <p>Время работы: {{ props.item.time_work }}</p>
         </div>
 
         <div class="photo">
