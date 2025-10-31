@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Selection;
 use Illuminate\Http\Request;
 use App\Filters\ProductFilter;
+use App\Filters\ParametrFilter;
 use App\Filters\SelectorFilter;
 use App\Services\OrderServices;
 
@@ -56,7 +57,7 @@ class SelectionController extends Controller
         return $resuilt;
     }
 
-    public function parametr_filter(ProductFilter $request, string $group = "") {
+    public function parametr_filter(ParametrFilter $request, string $group = "") {
         if (!empty($group))
             return Product::select($group)->filter($request)->groupBy($group)->get();
         else

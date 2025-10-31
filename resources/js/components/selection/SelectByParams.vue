@@ -148,6 +148,7 @@ import ProductList from './ProductList.vue'
             params: getQueryParam()
         })
         .then((response) => {
+            console.log(response)
             if (selectedClemLocation.value == "%")  clemLocationList.value = response.data
             if ((selectedClemLocation.value != "%") && (selectedVolume.value == "%")) volumeList.value = response.data
             console.log(volumeList.value)
