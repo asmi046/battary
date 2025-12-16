@@ -18,7 +18,7 @@ class Puncts extends Component
     {
         $this->wrap_class = $wrap;
         try {
-            $this->puncts = Menu::where('menu', $name)->get();
+            $this->puncts = Menu::where('menu', $name)->orderBy('order')->get();
         } catch (\Throwable $e) {
             $this->puncts = null;
         }
