@@ -138,7 +138,7 @@ class ProductResource extends ModelResource
 
             ActionButton::make(
                 label: 'Просмотр страницы товара',
-                url: route('product_page', $this->getItem()['slug']),
+                url: route('product_page', $this->getItem()['slug'] ?? ''),
             )
                 ->blank()
                 ->success()
