@@ -141,7 +141,8 @@ class ProductResource extends ModelResource
                 url: route('product_page', $this->getItem()['slug']),
             )
                 ->blank()
-                ->success(),
+                ->success()
+                ->canSee(fn () => ! $this->isCreating()),
 
         ];
     }
