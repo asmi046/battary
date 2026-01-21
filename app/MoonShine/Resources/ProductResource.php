@@ -142,7 +142,7 @@ class ProductResource extends ModelResource
             )
                 ->blank()
                 ->success()
-                ->canSee(fn () => $this->getItem()->exists),
+                ->canSee(fn () => $this->getItem()),
 
         ];
     }
