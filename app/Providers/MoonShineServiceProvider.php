@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use Closure;
-use App\Models\Blog;
 use MoonShine\MoonShine;
 use MoonShine\Pages\Page;
 use MoonShine\Menu\MenuItem;
@@ -98,6 +97,11 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 static fn() => __('SEO'),
                 new SeoDataResource()
             )->icon('heroicons.outline.chart-bar-square'),
+
+            MenuItem::make(
+                static fn() => __('Импорт'),
+                static fn() => route('import')
+            )->icon('heroicons.outline.arrow-up-tray'),
 
             MenuGroup::make(static fn() => __('moonshine::ui.resource.system'), [
                 MenuItem::make(
